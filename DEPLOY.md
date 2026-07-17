@@ -1,10 +1,12 @@
-# Deploying Hobbify (Docker-free, free-tier)
+# Deploying Hobbify (free-tier)
 
-This guide deploys the whole stack without Docker, using only free tiers:
+This guide deploys the whole stack using only free tiers:
 
 - **Neon** — managed Postgres (replaces the local `docker-compose` Postgres container)
-- **Render** — runs the Spring Boot backend as a native Java web service
+- **Render** — runs the Spring Boot backend
 - **Vercel** — builds and serves the Vite/React frontend as a static site
+
+**On Docker**: Render has no native Java/JVM buildpack — Docker is the standard, fully-supported way to run a Spring Boot app there, including on the free tier. You don't run Docker yourself anywhere in this guide; Render builds the image from the `Dockerfile` already in `hobbify-backend/` and runs it in the cloud. There's no docker-compose, no local `docker build`, nothing to install.
 
 ```
 Browser  →  Vercel (static frontend)  →  Render (Spring Boot API)  →  Neon (Postgres)
@@ -49,10 +51,9 @@ Keep this tab open — you'll copy these into Render next.
 
 1. Create a free account at render.com, then **New → Web Service**, and connect the GitHub repo.
 2. Configure the service:
+   - **Language**: `Docker` (Render auto-builds from `hobbify-backend/Dockerfile` — no Build/Start Command fields needed, the Dockerfile defines both)
    - **Root Directory**: `hobbify-backend`
-   - **Runtime**: `Java`
-   - **Build Command**: `mvn clean package -DskipTests`
-   - **Start Command**: `java -jar target/hobbify-0.0.1-SNAPSHOT.jar`
+   - **Region**: any — doesn't need to match Neon's region exactly, same continent is enough
    - **Instance Type**: Free
 3. Generate a production RSA key pair — **don't reuse your local dev one**. Run this on your machine (requires `openssl`, present on macOS/Linux/Git Bash):
    ```bash
