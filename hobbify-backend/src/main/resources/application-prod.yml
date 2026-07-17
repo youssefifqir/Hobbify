@@ -10,11 +10,15 @@ spring:
     driver-class-name: org.postgresql.Driver
 
     hikari:
-      maximum-pool-size: 20
-      minimum-idle: 5
+      # Sized for a small serverless Postgres (Neon free tier), not a dedicated server:
+      # holding 5 idle connections open around the clock is exactly what triggers
+      # connection-storm/auto-suspend-wake problems on a free-tier compute. Neon's
+      # own guidance for this kind of deployment is a small pool, allocated on demand.
+      maximum-pool-size: 5
+      minimum-idle: 1
       idle-timeout: 300000
       max-lifetime: 1800000
-      keepalive-time: 300000
+      keepalive-time: 120000
       connection-timeout: 30000
       leak-detection-threshold: 60000
 
