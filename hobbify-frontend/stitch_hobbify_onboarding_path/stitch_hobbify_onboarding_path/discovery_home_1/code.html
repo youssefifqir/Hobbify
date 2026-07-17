@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hobbify - Discover Your Next Passion</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&amp;family=Lexend:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#2e3132",
+                    "on-background": "#191c1d",
+                    "on-surface": "#191c1d",
+                    "on-primary-fixed-variant": "#454749",
+                    "on-secondary-container": "#476d52",
+                    "secondary-container": "#c3edcb",
+                    "inverse-primary": "#c6c6c9",
+                    "on-tertiary-container": "#8a8098",
+                    "background": "#f8f9fa",
+                    "tertiary": "#020009",
+                    "surface-bright": "#f8f9fa",
+                    "inverse-on-surface": "#f0f1f2",
+                    "primary-container": "#1a1c1e",
+                    "surface-tint": "#5d5e61",
+                    "on-primary-fixed": "#1a1c1e",
+                    "on-surface-variant": "#44474a",
+                    "on-tertiary-fixed": "#1f182b",
+                    "tertiary-fixed": "#eadef9",
+                    "secondary-fixed": "#c3edcb",
+                    "on-tertiary-fixed-variant": "#4b4358",
+                    "on-secondary-fixed": "#00210e",
+                    "surface": "#f8f9fa",
+                    "error": "#ba1a1a",
+                    "surface-variant": "#e1e3e4",
+                    "surface-container-low": "#f3f4f5",
+                    "secondary": "#41664c",
+                    "surface-container": "#edeeef",
+                    "tertiary-container": "#1f192c",
+                    "on-error": "#ffffff",
+                    "outline-variant": "#c5c6ca",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#838486",
+                    "primary": "#000101",
+                    "primary-fixed-dim": "#c6c6c9",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#75777a",
+                    "surface-container-highest": "#e1e3e4",
+                    "primary-fixed": "#e2e2e5",
+                    "surface-dim": "#d9dadb",
+                    "secondary-fixed-dim": "#a7d0b0",
+                    "on-secondary-fixed-variant": "#2a4e36",
+                    "tertiary-fixed-dim": "#cdc2dc",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#e7e8e9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "64px",
+                    "section-gap": "80px",
+                    "unit": "8px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Be Vietnam Pro"],
+                    "body-lg": ["Be Vietnam Pro"],
+                    "headline-xl": ["Lexend"],
+                    "label-md": ["Be Vietnam Pro"],
+                    "body-md": ["Be Vietnam Pro"],
+                    "headline-lg-mobile": ["Lexend"],
+                    "headline-lg": ["Lexend"],
+                    "headline-md": ["Lexend"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .hobby-card-hover:hover {
+            transform: scale(1.02);
+            transition: transform 0.3s ease;
+        }
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="bg-surface/80 dark:bg-surface/80 backdrop-blur-md docked full-width top-0 sticky z-50 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary tracking-tight">Hobbify</span>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-primary dark:text-inverse-primary border-b-2 border-primary dark:border-inverse-primary pb-1 font-label-md text-label-md" href="#">Discover</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200 font-label-md text-label-md" href="#">My Hobbies</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200 font-label-md text-label-md" href="#">Community</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200 font-label-md text-label-md" href="#">Guide</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden lg:block">
+<div class="absolute inset-y-0 left-3 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 w-64 focus:ring-2 focus:ring-primary/20 text-label-md font-label-md" placeholder="Find a new hobby..." type="text"/>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full flex items-center gap-2 hover:scale-95 transition-all duration-150 font-label-md text-label-md active:opacity-80">
+                    Create
+                    <span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+<div class="flex items-center gap-3">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<img class="w-10 h-10 rounded-full border-2 border-surface-variant object-cover" data-alt="A close-up professional profile portrait of a smiling woman with warm lighting and a soft-focus indoor plant background, representing the Hobbify user profile in a clean, modern lifestyle aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjWOJ5xAD6RjHt3c7_deckmxnbiSevbIDu99NkOV5QW7oyL1bRWY4SVXu8DuV5jOFraPrIaK_mqFCONFTna7j29Fcul0TVJ2eEsK28xBQSN1627Yj8jVZEspkVZTRe9lc_w_eERVxovbjURRcdiHGT6vCYvUHz6yxTNQCb4_7Ec0gzzumYAY0KnPmOwUI27YzaEFUbdIwEMSbMcnH9Ai4isK3mtISxuwSu0QxHXJ06mNfzQHLz8e5xMOl5xwQXkZwvogabJFBScf_e"/>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-desktop py-section-gap">
+<!-- Hero Section -->
+<section class="mb-section-gap">
+<h1 class="font-headline-xl text-headline-xl mb-6 text-primary">Discover your next passion.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-10">
+                Explore a community of creators, athletes, and thinkers. Find something that moves you, perfectly fitted to your lifestyle and space.
+            </p>
+<!-- Filters & Search -->
+<div class="flex flex-wrap gap-4 items-center bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/30">
+<div class="flex items-center gap-3 pr-4 border-r border-outline-variant">
+<span class="text-label-md font-label-md text-on-surface-variant">Cost:</span>
+<button class="bg-secondary-container text-on-secondary-container px-4 py-1.5 rounded-full text-label-sm font-label-sm">$</button>
+<button class="bg-surface-container-high text-on-surface-variant px-4 py-1.5 rounded-full text-label-sm font-label-sm hover:bg-surface-variant">$$</button>
+<button class="bg-surface-container-high text-on-surface-variant px-4 py-1.5 rounded-full text-label-sm font-label-sm hover:bg-surface-variant">$$$</button>
+</div>
+<div class="flex items-center gap-3 px-4 border-r border-outline-variant">
+<span class="text-label-md font-label-md text-on-surface-variant">Space:</span>
+<button class="bg-tertiary-fixed text-on-tertiary-fixed px-4 py-1.5 rounded-full text-label-sm font-label-sm">Small</button>
+<button class="bg-surface-container-high text-on-surface-variant px-4 py-1.5 rounded-full text-label-sm font-label-sm hover:bg-surface-variant">Medium</button>
+<button class="bg-surface-container-high text-on-surface-variant px-4 py-1.5 rounded-full text-label-sm font-label-sm hover:bg-surface-variant">Large</button>
+</div>
+<div class="flex items-center gap-3 px-4 border-r border-outline-variant">
+<span class="text-label-md font-label-md text-on-surface-variant">Time:</span>
+<button class="bg-surface-container-high text-on-surface-variant px-4 py-1.5 rounded-full text-label-sm font-label-sm hover:bg-surface-variant">1hr</button>
+<button class="bg-secondary-container text-on-secondary-container px-4 py-1.5 rounded-full text-label-sm font-label-sm">5hrs</button>
+<button class="bg-surface-container-high text-on-surface-variant px-4 py-1.5 rounded-full text-label-sm font-label-sm hover:bg-surface-variant">10hrs+</button>
+</div>
+<button class="flex items-center gap-2 text-primary font-label-md text-label-md ml-auto hover:underline">
+                    Clear all
+                </button>
+</div>
+</section>
+<!-- Hobby Gallery (Asymmetric/Bento Style) -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1: Cooking -->
+<div class="hobby-card-hover group relative overflow-hidden bg-surface-container-lowest rounded-lg shadow-sm flex flex-col h-[520px]">
+<div class="relative flex-1 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A high-angle, vibrant culinary shot of a modern kitchen counter with fresh basil, cherry tomatoes, and artisanal pasta. Warm sunlight streams across the scene, creating a cozy and inspiring atmosphere for a cooking hobby. The style is clean, bright, and organic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCFJnMHBoRGHWuiNbSfogxYixKa3k2ogjw2QjXVYr03mNU3NlkUHUdefF__QBdCrlrRzijPXDE_Lhb_k2zSBr5QyCyPEG_5PoQJQazYsxDEtn6ppIuP4UQhJ_VgG2scCnnvheD0DCVIMmb2jRGH5Sq5LlkMQSmqgTDi2mS_m5FoBcTXIGVhTxV-r54dMUtJ0kyuGuZOJtsZy6JeB8dRa9pXWB8AOw_G1VkzkpHuCmdMWuFVvmSliBgmhl1ni3xD9E-j2ORGlLHbRqWr')"></div>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">restaurant</span>
+<span class="font-label-md text-label-md text-primary">Cooking</span>
+</div>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-headline-md text-primary">Artisanal Sourdough</h3>
+<span class="material-symbols-outlined text-on-surface-variant">favorite</span>
+</div>
+<p class="text-on-surface-variant mb-6 line-clamp-2">Master the art of fermentation and create golden-crusted loaves from your own kitchen.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-sm font-label-sm">$$ • Moderate</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full text-label-sm font-label-sm">Small Space</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full text-label-sm font-label-sm">12hrs Cycle</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Indoor Gardening (Taller Column) -->
+<div class="hobby-card-hover group relative overflow-hidden bg-surface-container-lowest rounded-lg shadow-sm flex flex-col h-[520px]">
+<div class="relative flex-1 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A serene indoor urban garden setup with multiple levels of lush green plants like Monstera and ferns in stylish ceramic pots. Soft morning light creates gentle shadows against a clean off-white wall. The overall mood is peaceful and nurturing, reflecting a low-pressure discovery of gardening." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCrLl7nC_-QFdO3t57M5xJ4zEPw1m3OO8ZyVNmdJB-91oSPOSPtFYSxQ1Ruy42nZ3dRmX8_DmUvkLvY_2HO6bPDeSxfxE24YGoATWDUw6MQ2I6otMNUEkkC4MiC_lVsVA4IFFs5mRn7oAWVFvrIv1jMUX7tzu9bQoRt7tITAP0kVrien7SrLam21gXFIbkHd8m6HflSmSM-3R257ICtuChw3DHhEdsFpJOEJ5A4KzemaH9kgXywb0biHlVTFjXgyva4mQ4ZAmeUc_UW')"></div>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">potted_plant</span>
+<span class="font-label-md text-label-md text-primary">Gardening</span>
+</div>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-headline-md text-primary">Urban Jungle Styling</h3>
+<span class="material-symbols-outlined text-on-surface-variant">favorite</span>
+</div>
+<p class="text-on-surface-variant mb-6 line-clamp-2">Transform your apartment into a living sanctuary with expert indoor plant care.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-sm font-label-sm">$ • Beginner</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full text-label-sm font-label-sm">Medium Space</span>
+</div>
+</div>
+</div>
+<!-- Card 3: Cycling -->
+<div class="hobby-card-hover group relative overflow-hidden bg-surface-container-lowest rounded-lg shadow-sm flex flex-col h-[520px]">
+<div class="relative flex-1 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A dynamic shot of a sleek modern road bike leaning against a rustic wooden fence along a scenic coastal path at sunset. Golden hour lighting illuminates the bicycle and the long road ahead, conveying a sense of freedom, movement, and the joy of outdoor activity. Modern-organic aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCVmyZ2qfGIqpNsxdDtfj-CgFTad8O7NZ5Ro-LdNP466RG_bE6PsUSNkMAAJqS9NwYSq6bCSwLH8Nm5q7HMRgAzsC-TRPI76bML7ijclCsCXGgU9pEiPfSYvcCbJ7-Yv1xmD75IMckFgkIrWlqC4sT7LhwbX0FwxqV8gwxkbfS2Ac9zLzqfiREZnwMLQbc8-QFEJ43C8v0ccp3p9CKIrekHfcOjVhooXnMTThmuuElXMcAvttVNRReN30PFiFhjoE1V_MWGPCoOjqaq')"></div>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">directions_run</span>
+<span class="font-label-md text-label-md text-primary">Sport</span>
+</div>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-headline-md text-primary">Coastal Cycling</h3>
+<span class="material-symbols-outlined text-on-surface-variant">favorite</span>
+</div>
+<p class="text-on-surface-variant mb-6 line-clamp-2">Join local groups for weekend coastal rides. Improve fitness while exploring your city.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-sm font-label-sm">$$$ • Active</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full text-label-sm font-label-sm">2hrs+</span>
+</div>
+</div>
+</div>
+<!-- Card 4: Pottery -->
+<div class="hobby-card-hover group relative overflow-hidden bg-surface-container-lowest rounded-lg shadow-sm flex flex-col h-[520px]">
+<div class="relative flex-1 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Close-up of a potter's hands shaping wet clay on a spinning wheel in a sunlit, rustic studio. Particles of dust dance in the light beams, and various finished earth-toned ceramic vases sit on shelves in the background. The mood is tactile, meditative, and focused on creative craft." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAzyc1NR1VHUhGIgBb_E2jGhH43dfUesNE9zXgE_oodwZWeuZaK_-Q4u9WwJ6Sx_z4TX2rWPGi4Jc8hlP3ilMFIkrmOkR6xPjfUChwNSdbVdIEvmNMjY1DqvmxVSpiUi2PUG1vSqV0Xim64r9F3M0rTUV9jtewjQWKiW0Q_-30XhRJkwhffFwwn7qgOWAT2aFxb_oTViThb3za0GcAO3qgBnj-zeYFQh_2t93Ozweqh6MZ4CS7EvWcwDq3ZKTH3qAl1v2GEiAT0RhBS')"></div>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">brush</span>
+<span class="font-label-md text-label-md text-primary">Art</span>
+</div>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-headline-md text-primary">Wheel Throwing</h3>
+<span class="material-symbols-outlined text-on-surface-variant">favorite</span>
+</div>
+<p class="text-on-surface-variant mb-6 line-clamp-2">A meditative practice of shaping raw earth into functional and beautiful objects.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-sm font-label-sm">$$ • Skilled</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full text-label-sm font-label-sm">Studio Needed</span>
+</div>
+</div>
+</div>
+<!-- Card 5: Photography -->
+<div class="hobby-card-hover group relative overflow-hidden bg-surface-container-lowest rounded-lg shadow-sm flex flex-col h-[520px]">
+<div class="relative flex-1 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A vintage film camera resting on an outdoor table in a charming European-style cafe. The background shows a soft-focus street scene with warm light and bustling activity. The image represents the hobby of street photography, capturing fleeting moments with a classic, artistic flair." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBc-JVs8lV-H7PgB4I7lCbUwFWDQAtOdPyIpb1gFFA2zb5WLHQA59L6t1M-or1zgHD2ZbFB7XM2U1AMIAShhSOGdvGrRDAAcnIR_dVo9fB1m4lXxaf6K57wYPceAfZxEkR0wZdmJxGYemLmMo6yGG6e1U1cEHVypbF-P2MdmOKLAETvgmj0cdCHPaRQNCsltq7b8eMyKcZHLJ-m_0brVoeNzWVcB40u__WLlcLLQfPCW0MGpzQqKM1e2jm_HgO-LxRSVldq-9Gxpl_c')"></div>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">photo_camera</span>
+<span class="font-label-md text-label-md text-primary">Photo</span>
+</div>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-headline-md text-primary">Street Narratives</h3>
+<span class="material-symbols-outlined text-on-surface-variant">favorite</span>
+</div>
+<p class="text-on-surface-variant mb-6 line-clamp-2">Learn to find the extraordinary in everyday city life through your lens.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-sm font-label-sm">$$ • Creative</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full text-label-sm font-label-sm">Anytime</span>
+</div>
+</div>
+</div>
+<!-- Card 6: Yoga -->
+<div class="hobby-card-hover group relative overflow-hidden bg-surface-container-lowest rounded-lg shadow-sm flex flex-col h-[520px]">
+<div class="relative flex-1 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A minimalist yoga mat laid out on a light wood floor in a spacious, white-walled room filled with soft ambient light. A single large leaf plant stands in the corner. The setting is exceptionally calm and clean, emphasizing the mental clarity and physical openness of a daily yoga practice." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBFoiMLIarKjy-lPWTQxbu2ec430k238qlbc5KARHiOlp_4Bq1xQa-FKhK1ANth9hXsra2Ouo-J70-82gSLNoWBS0llpymNTsGwDFUX30O_d4_9k4ASEw4QZJ-8hTZnfRcqzRRLfq64SxTAZ48xTKDxGzbhKc-s02Afpg8RaZdP01ZaMkZkvIUv5MDPFPjVCatFdIywq3yosVhiJPWZSSwa2PGbxgx9PRCZ1M_jia_KT7-vs8t9QpX40um8n8OwVcvkBae17eIZxtFt')"></div>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">self_improvement</span>
+<span class="font-label-md text-label-md text-primary">Wellness</span>
+</div>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-headline-md text-primary">Morning Vinyasa</h3>
+<span class="material-symbols-outlined text-on-surface-variant">favorite</span>
+</div>
+<p class="text-on-surface-variant mb-6 line-clamp-2">Connect breath and movement in this fluid practice designed for daily energy.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-sm font-label-sm">$ • All Levels</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full text-label-sm font-label-sm">Small Space</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Guide Banner -->
+<section class="mt-section-gap bg-primary-container text-on-primary-container p-12 rounded-lg relative overflow-hidden group">
+<div class="relative z-10 max-w-xl">
+<h2 class="font-headline-lg text-headline-lg mb-4 text-white">Not sure where to start?</h2>
+<p class="font-body-md text-body-md text-on-primary-container/80 mb-8">
+                    Take our 2-minute "Passion Pulse" quiz to get a personalized collection of hobbies that match your personality and schedule.
+                </p>
+<button class="bg-white text-primary px-8 py-3 rounded-full font-label-md text-label-md flex items-center gap-2 hover:scale-105 transition-transform">
+                    Start the Quiz
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<!-- Decorative circle -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-secondary/20 rounded-full blur-3xl group-hover:scale-110 transition-transform duration-1000"></div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant dark:border-outline mt-section-gap">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-12 max-w-container-max mx-auto gap-8">
+<div class="flex flex-col gap-4">
+<span class="text-headline-sm font-headline-sm font-bold text-primary dark:text-inverse-primary">Hobbify</span>
+<p class="text-label-sm font-label-sm text-on-surface-variant dark:text-surface-variant max-w-xs">
+                    © 2024 Hobbify. Discover your next passion. Building a world of curious minds and creative souls.
+                </p>
+</div>
+<div class="flex flex-wrap justify-center gap-gutter">
+<a class="text-label-sm font-label-sm text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">About Us</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">Help Center</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">Careers</a>
+</div>
+<div class="flex gap-4">
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px]">public</span>
+</button>
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+</div>
+</div>
+</footer>
+<!-- Mobile Bottom Navigation (Hidden on Desktop) -->
+<div class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-sm bg-white/90 backdrop-blur-xl shadow-2xl rounded-full px-6 py-4 flex justify-between items-center z-[100] border border-white/20">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="text-[10px] font-bold">Discover</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">interests</span>
+<span class="text-[10px]">Hobbies</span>
+</button>
+<div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg -mt-12 border-4 border-white">
+<span class="material-symbols-outlined">add</span>
+</div>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">groups</span>
+<span class="text-[10px]">Community</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px]">Profile</span>
+</button>
+</div>
+<script>
+        // Micro-interactions and subtle effects
+        document.querySelectorAll('.hobby-card-hover').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const img = card.querySelector('div[style*="background-image"]');
+                if (img) img.style.transform = 'scale(1.05)';
+            });
+            card.addEventListener('mouseleave', () => {
+                const img = card.querySelector('div[style*="background-image"]');
+                if (img) img.style.transform = 'scale(1)';
+            });
+        });
+
+        // Search Bar Focus Effect
+        const searchInput = document.querySelector('input[type="text"]');
+        if (searchInput) {
+            searchInput.addEventListener('focus', () => {
+                searchInput.parentElement.classList.add('ring-2', 'ring-primary/10');
+            });
+            searchInput.addEventListener('blur', () => {
+                searchInput.parentElement.classList.remove('ring-2', 'ring-primary/10');
+            });
+        }
+    </script>
+</body></html>

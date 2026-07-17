@@ -1,0 +1,47 @@
+# Production Profile Configuration
+spring:
+  datasource:
+    # Defaults match the docker-compose setup; override all three for a real deploy
+    # (e.g. Render + Neon) — Neon's connection string goes in SPRING_DATASOURCE_URL
+    # as-is (jdbc:postgresql://..., include ?sslmode=require).
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://db:5432/Hobbify_prod}
+    username: ${SPRING_DATASOURCE_USERNAME:Hobbify_user}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+      idle-timeout: 300000
+      max-lifetime: 1800000
+      keepalive-time: 300000
+      connection-timeout: 30000
+      leak-detection-threshold: 60000
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: false
+        jdbc:
+          batch_size: 25
+        order_inserts: true
+        order_updates: true
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+    validate-on-migrate: true
+    clean-disabled: true
+logging:
+  level:
+    root: WARN
+    com.example.hobbify: INFO
+    org.springframework.security: WARN
+    org.hibernate.SQL: ERROR
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"

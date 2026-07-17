@@ -1,0 +1,2 @@
+ALTER TABLE app_hobby ADD COLUMN image_data TEXT;
+ALTER TABLE app_hobby ADD COLUMN icon VARCHAR(16);

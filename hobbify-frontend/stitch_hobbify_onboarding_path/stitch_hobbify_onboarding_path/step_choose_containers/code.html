@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hobbify - Choose Your Containers</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Be+Vietnam+Pro:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface-container-lowest": "#ffffff",
+                "on-surface-variant": "#44474a",
+                "on-primary": "#ffffff",
+                "tertiary-fixed": "#eadef9",
+                "tertiary-container": "#1f192c",
+                "on-secondary-fixed-variant": "#2a4e36",
+                "primary-fixed": "#e2e2e5",
+                "primary": "#000101",
+                "error-container": "#ffdad6",
+                "on-surface": "#191c1d",
+                "inverse-on-surface": "#f0f1f2",
+                "on-secondary-fixed": "#00210e",
+                "tertiary-fixed-dim": "#cdc2dc",
+                "secondary-container": "#c3edcb",
+                "surface": "#f8f9fa",
+                "inverse-primary": "#c6c6c9",
+                "error": "#ba1a1a",
+                "background": "#f8f9fa",
+                "on-error-container": "#93000a",
+                "surface-container-high": "#e7e8e9",
+                "on-primary-container": "#838486",
+                "inverse-surface": "#2e3132",
+                "on-secondary-container": "#476d52",
+                "outline-variant": "#c5c6ca",
+                "tertiary": "#020009",
+                "on-primary-fixed": "#1a1c1e",
+                "primary-fixed-dim": "#c6c6c9",
+                "primary-container": "#1a1c1e",
+                "surface-tint": "#5d5e61",
+                "on-primary-fixed-variant": "#454749",
+                "on-tertiary-fixed": "#1f182b",
+                "secondary": "#41664c",
+                "surface-variant": "#e1e3e4",
+                "on-secondary": "#ffffff",
+                "outline": "#75777a",
+                "on-tertiary-fixed-variant": "#4b4358",
+                "on-tertiary-container": "#8a8098",
+                "surface-container": "#edeeef",
+                "surface-dim": "#d9dadb",
+                "surface-bright": "#f8f9fa",
+                "secondary-fixed-dim": "#a7d0b0",
+                "on-tertiary": "#ffffff",
+                "secondary-fixed": "#c3edcb",
+                "on-error": "#ffffff",
+                "surface-container-low": "#f3f4f5",
+                "surface-container-highest": "#e1e3e4",
+                "on-background": "#191c1d"
+            },
+            "borderRadius": {
+                "DEFAULT": "1rem",
+                "lg": "2rem",
+                "xl": "3rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "unit": "8px",
+                "margin-desktop": "64px",
+                "gutter": "24px",
+                "section-gap": "80px",
+                "margin-mobile": "20px",
+                "container-max": "1280px"
+            },
+            "fontFamily": {
+                "headline-lg": ["Lexend"],
+                "headline-lg-mobile": ["Lexend"],
+                "label-sm": ["Be Vietnam Pro"],
+                "label-md": ["Be Vietnam Pro"],
+                "headline-xl": ["Lexend"],
+                "body-md": ["Be Vietnam Pro"],
+                "headline-md": ["Lexend"],
+                "body-lg": ["Be Vietnam Pro"]
+            },
+            "fontSize": {
+                "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f8f9fa;
+            color: #191c1d;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .step-progress-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        .active-dot {
+            width: 24px;
+            border-radius: 4px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col min-h-screen">
+<!-- Top Navigation Anchor -->
+<header class="sticky top-0 w-full z-40 flex justify-between items-center px-margin-mobile py-4 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl">
+<button aria-label="Go back" class="active:scale-95 transition-all text-primary">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tight text-primary">Hobbify</h1>
+<button aria-label="Settings" class="active:scale-95 transition-all text-primary">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow px-margin-mobile pt-4 pb-32">
+<!-- Breadcrumb / Context -->
+<nav class="flex items-center gap-2 mb-6">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Urban Gardening</span>
+<span class="material-symbols-outlined text-[12px] text-outline">chevron_right</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Step 2: Choose Containers</span>
+</nav>
+<!-- Header Section -->
+<section class="mb-8">
+<div class="flex items-center justify-between mb-4">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-sm text-label-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                    15 min
+                </span>
+<div class="flex gap-1.5">
+<div class="step-progress-dot bg-outline-variant"></div>
+<div class="step-progress-dot active-dot bg-primary"></div>
+<div class="step-progress-dot bg-outline-variant"></div>
+<div class="step-progress-dot bg-outline-variant"></div>
+</div>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Find the Perfect Home for Your Plants</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Selecting the right container is vital for drainage and root health.</p>
+</section>
+<!-- Reference Image - Modern Organic Gallery Style -->
+<section class="mb-10">
+<div class="relative w-full aspect-[4/5] rounded-lg overflow-hidden shadow-lg group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A high-quality, aesthetic photograph of various terracotta and ceramic gardening pots arranged on a minimalist wooden bench. The setting is a sun-drenched balcony with soft, warm morning light filtering through lush green leaves in the background. The pots vary in size and texture, creating a modern organic feel. The atmosphere is peaceful and encouraging, utilizing a soft color palette of earthy clay tones and vibrant plant greens against a clean white wall." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBW5HEL00mkpiSjy3-V7CXbIvQK-e41QegEttQ7bDsfkeSp24dOgEti-YxynH-AljmYCOMpvknZep7lAGq_bFpj13ABulPqvS7mHhACE7mPtASH4iBep_GPv5qfQ9nYgFVwghImois2ymDugzUePhYG_90cjh_Fcw5NVrtvDyHLnhRuSrfZ4bzETQnyPnC5Tnq2Dg2-DeFHoG0X7ZTEO4DsK1MUjMFsjDUfIl0W3Y35tx5lS6q5fcOKj61Vb--I9CQnEQEtdm5kRQCi')">
+</div>
+<div class="absolute bottom-4 left-4 right-4 p-4 glass-card rounded-lg">
+<p class="font-label-sm text-label-sm text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">info</span>
+                        Focus on drainage and porous materials.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Instructional Content -->
+<section class="space-y-8">
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-fixed">category</span>
+</div>
+<div class="flex-grow">
+<h3 class="font-label-md text-label-md text-primary mb-1">Material Matters</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Terracotta is breathable but dries fast. Plastic holds moisture but may overheat in direct sun.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-fixed">straighten</span>
+</div>
+<div class="flex-grow">
+<h3 class="font-label-md text-label-md text-primary mb-1">Size it Right</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Ensure your pot is at least 2 inches wider than the root ball of your plant to allow for growth.</p>
+</div>
+</div>
+<!-- Pro Tip Card -->
+<div class="bg-surface-container-low p-6 rounded-lg border border-outline-variant/30">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-secondary">lightbulb</span>
+<span class="font-label-md text-label-md text-secondary">Pro Tip</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Always check for drainage holes at the bottom. If they're missing, you'll need a masonry bit to drill them yourself!</p>
+</div>
+</section>
+<!-- Primary Action -->
+<section class="mt-12">
+<button class="w-full py-5 bg-primary text-on-primary rounded-full font-label-md text-label-md flex items-center justify-center gap-2 shadow-lg active:scale-[0.98] transition-transform">
+                Mark Complete
+                <span class="material-symbols-outlined">check_circle</span>
+</button>
+</section>
+</main>
+<!-- Bottom Navigation Navigation Cluster -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface-container-lowest dark:bg-surface-container-low px-margin-mobile py-4 flex items-center justify-between shadow-[0_-4px_24px_rgba(0,0,0,0.04)] rounded-t-lg">
+<button class="flex items-center gap-2 text-on-surface-variant hover:bg-surface-variant/50 px-4 py-2 rounded-full transition-colors active:scale-95">
+<span class="material-symbols-outlined">chevron_left</span>
+<span class="font-label-md text-label-md">Previous</span>
+</button>
+<div class="h-6 w-[1px] bg-outline-variant"></div>
+<button class="flex items-center gap-2 text-primary hover:bg-surface-variant/50 px-4 py-2 rounded-full transition-colors active:scale-95 font-semibold">
+<span class="font-label-md text-label-md">Next Step</span>
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</nav>
+<!-- Micro-interaction Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const completeBtn = document.querySelector('button.bg-primary');
+            
+            completeBtn.addEventListener('click', () => {
+                const icon = completeBtn.querySelector('.material-symbols-outlined');
+                const originalText = completeBtn.childNodes[0].textContent;
+                
+                completeBtn.classList.replace('bg-primary', 'bg-secondary');
+                completeBtn.textContent = 'Step Completed!';
+                
+                const checkIcon = document.createElement('span');
+                checkIcon.className = 'material-symbols-outlined';
+                checkIcon.textContent = 'task_alt';
+                completeBtn.appendChild(checkIcon);
+
+                setTimeout(() => {
+                    completeBtn.classList.replace('bg-secondary', 'bg-primary');
+                    completeBtn.innerHTML = originalText + '<span class="material-symbols-outlined">check_circle</span>';
+                }, 2000);
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hobbify | Urban Gardening Guide</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .step-transition {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .progress-ring-circle {
+            transition: stroke-dashoffset 0.5s ease-in-out;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#00210e",
+                        "tertiary-container": "#1f192c",
+                        "surface-container": "#edeeef",
+                        "surface": "#f8f9fa",
+                        "on-tertiary-fixed": "#1f182b",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#a7d0b0",
+                        "primary-container": "#1a1c1e",
+                        "tertiary-fixed": "#eadef9",
+                        "outline-variant": "#c5c6ca",
+                        "secondary-fixed": "#c3edcb",
+                        "on-primary-fixed-variant": "#454749",
+                        "tertiary": "#020009",
+                        "surface-tint": "#5d5e61",
+                        "on-tertiary-container": "#8a8098",
+                        "on-surface": "#191c1d",
+                        "primary-fixed-dim": "#c6c6c9",
+                        "tertiary-fixed-dim": "#cdc2dc",
+                        "outline": "#75777a",
+                        "surface-container-low": "#f3f4f5",
+                        "primary-fixed": "#e2e2e5",
+                        "on-surface-variant": "#44474a",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#838486",
+                        "on-background": "#191c1d",
+                        "surface-variant": "#e1e3e4",
+                        "secondary": "#41664c",
+                        "primary": "#000101",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#476d52",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "background": "#f8f9fa",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#2a4e36",
+                        "on-tertiary-fixed-variant": "#4b4358",
+                        "on-primary-fixed": "#1a1c1e",
+                        "surface-container-high": "#e7e8e9",
+                        "inverse-surface": "#2e3132",
+                        "inverse-primary": "#c6c6c9",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-bright": "#f8f9fa",
+                        "secondary-container": "#c3edcb",
+                        "surface-dim": "#d9dadb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "section-gap": "80px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Lexend"],
+                        "label-sm": ["Be Vietnam Pro"],
+                        "headline-lg-mobile": ["Lexend"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "headline-lg": ["Lexend"],
+                        "headline-md": ["Lexend"],
+                        "label-md": ["Be Vietnam Pro"],
+                        "body-lg": ["Be Vietnam Pro"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- TopNavBar: Execution of JSON style_ keys -->
+<nav class="bg-surface/80 dark:bg-surface/80 backdrop-blur-md shadow-sm dark:shadow-none docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-12">
+<a class="text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary tracking-tight" href="#">Hobbify</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant dark:text-surface-variant text-label-md font-label-md hover:text-primary transition-colors duration-200" href="#">Discover</a>
+<a class="text-primary dark:text-inverse-primary border-b-2 border-primary dark:border-inverse-primary pb-1 text-label-md font-label-md" href="#">Guide</a>
+<a class="text-on-surface-variant dark:text-surface-variant text-label-md font-label-md hover:text-primary transition-colors duration-200" href="#">My Hobbies</a>
+<a class="text-on-surface-variant dark:text-surface-variant text-label-md font-label-md hover:text-primary transition-colors duration-200" href="#">Community</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative group hidden lg:block">
+<span class="absolute inset-y-0 left-3 flex items-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</span>
+<input class="bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-label-md w-64 focus:ring-2 focus:ring-secondary/20 transition-all" placeholder="Search guides..." type="text"/>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-md hover:opacity-90 active:scale-95 transition-all">Create</button>
+<div class="flex items-center gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">settings</span>
+<div class="w-10 h-10 rounded-full bg-secondary-container overflow-hidden ring-2 ring-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="A professional and friendly portrait of a young adult user with a warm smile, set against a soft-focus background of an indoor garden with lush green Monstera leaves. The lighting is natural and bright, conveying an approachable and modern persona consistent with a lifestyle and hobby-focused application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuConfqronN2zBpLYKnBZvHi0mf91Gclc2mwbtaP7p4n2-r8rtWR4_e8NUCO3gk0PKtj9qkbbaCNwujHnvZ_K4ipbLrnvZv_71LADzXi7khHgNtta8NwxEOlwB7hnn1REVy2IfHEIggeMx2hHwhcRA7qXTEcpYwNO1JhOSb6Ohb4cw8Wu7SP-eA1BB_4BCEegMnOSPcmi4CQOdGzr5f5VxW1oIPfmEj120X6losb0NVlFWftVp6OXBTwztDVsw7MN7kA3MGiuwTclIX_"/>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-margin-desktop py-12 flex gap-gutter">
+<!-- Left Sidebar: Progress Tracking -->
+<aside class="w-80 flex-shrink-0">
+<div class="sticky top-32 space-y-8">
+<!-- Progress Card -->
+<div class="bg-surface-container-lowest rounded-lg p-6 shadow-sm border border-outline-variant/10">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-label-md font-bold uppercase tracking-wider text-on-surface-variant">Overall Progress</h3>
+<span class="text-primary font-bold text-headline-md">33%</span>
+</div>
+<div class="h-3 w-full bg-surface-container rounded-full overflow-hidden mb-6">
+<div class="h-full bg-secondary w-1/3 rounded-full"></div>
+</div>
+<p class="text-label-md text-on-surface-variant">4 of 12 steps complete. You're doing great, Alex!</p>
+</div>
+<!-- Stage List -->
+<nav class="space-y-4">
+<!-- Stage 1: Active -->
+<div class="space-y-2">
+<div class="flex items-center gap-3 px-2">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center text-label-md font-bold">1</div>
+<span class="text-label-md font-bold text-on-surface">Stage 1: Gear &amp; Setup</span>
+</div>
+<div class="ml-10 border-l-2 border-primary/20 space-y-1 py-1">
+<a class="block py-2 px-4 text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Introduction to Urban Plots</a>
+<a class="block py-2 px-4 text-label-md text-primary font-semibold bg-secondary-container/30 rounded-r-lg border-l-2 border-primary -ml-[2px]" href="#">Choose Your Containers</a>
+<a class="block py-2 px-4 text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Selecting the Right Soil</a>
+</div>
+</div>
+<!-- Stage 2: Locked/Upcoming -->
+<div class="space-y-2 opacity-50">
+<div class="flex items-center gap-3 px-2">
+<div class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center text-label-md font-bold">2</div>
+<span class="text-label-md font-bold text-on-surface">Stage 2: Seeds &amp; Sowing</span>
+</div>
+</div>
+<!-- Stage 3: Locked/Upcoming -->
+<div class="space-y-2 opacity-50">
+<div class="flex items-center gap-3 px-2">
+<div class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center text-label-md font-bold">3</div>
+<span class="text-label-md font-bold text-on-surface">Stage 3: Daily Care</span>
+</div>
+</div>
+</nav>
+</div>
+</aside>
+<!-- Main Content Area: Step Detail -->
+<section class="flex-grow max-w-3xl">
+<header class="mb-10">
+<div class="flex items-center gap-2 text-secondary font-label-md mb-2">
+<span class="material-symbols-outlined text-[18px]">potted_plant</span>
+<span class="uppercase tracking-widest">Stage 1: Gear &amp; Setup</span>
+</div>
+<h1 class="text-headline-xl font-headline-xl text-on-background mb-4">Choose Your Containers</h1>
+<p class="text-body-lg text-on-surface-variant leading-relaxed">
+                    Success in urban gardening starts with where your plants live. Since space is at a premium, the right vessel isn't just about aesthetics—it's about survival.
+                </p>
+</header>
+<div class="relative rounded-xl overflow-hidden mb-12 shadow-md">
+<img class="w-full aspect-video object-cover" data-alt="A beautifully arranged collection of diverse terracotta and ceramic plant pots on a sun-drenched balcony. The pots vary in size and texture, some with minimalist matte finishes in sage green and lavender. Soft morning light creates gentle shadows, emphasizing the tactile nature of the materials. The background shows a soft-focus urban skyline, maintaining a peaceful, organic garden atmosphere within a modern city setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLDCiSj-HYxE1ePO33z07Ki622LqeQYwND3jumSLgex_HSeotEQAKdFHztS01231FeEab-R_Jyh71M50MeKJPUwAcOjXuIFZulcefauc8q7MDE1kkA02_gUAa7KQKrccizRY6vMRpGgQLuODCSk7CIXtqpk4Lmy0_h1ASOo1utqC8jQXarg4-TwDT30NqiU_bDXP2XY0Ij9JgBkzxjkPuY-W4huvdquQzNFLCB46T-Hqc810zAgEorg_2EzQvOrRF_F2ZnzYRGJWAN"/>
+<div class="absolute bottom-6 right-6 flex gap-2">
+<div class="bg-white/90 backdrop-blur px-4 py-2 rounded-full shadow-sm text-label-sm font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px]">info</span>
+                        Breathable Material
+                    </div>
+</div>
+</div>
+<!-- Content Blocks -->
+<article class="space-y-8">
+<section>
+<h2 class="text-headline-md font-headline-md text-on-surface mb-4">The Golden Rule: Drainage</h2>
+<p class="text-body-md text-on-surface-variant mb-4">
+                        Never, under any circumstances, use a container without drainage holes. Without them, water settles at the bottom, creating a "drowning" environment for roots. If you find a perfect pot without holes, you must drill them yourself using a masonry bit.
+                    </p>
+<ul class="space-y-3">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+<span class="text-body-md"><strong>Terracotta:</strong> Breathable and great for plants that like dry soil (like succulents or herbs).</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+<span class="text-body-md"><strong>Plastic/Resin:</strong> Lightweight and retains moisture longer. Ideal for high-rise balconies where wind dries things out fast.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+<span class="text-body-md"><strong>Fabric Bags:</strong> Excellent for root health as they "air prune" the roots and prevent circling.</span>
+</li>
+</ul>
+</section>
+<!-- Pro-Tip Box -->
+<div class="bg-secondary-container/40 border-l-4 border-secondary p-8 rounded-r-lg relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 opacity-10 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-[120px]">lightbulb</span>
+</div>
+<div class="relative z-10">
+<div class="flex items-center gap-2 text-on-secondary-container font-bold mb-2">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="text-label-md uppercase tracking-wider">Pro-Tip: The Finger Test</span>
+</div>
+<p class="text-body-md text-on-secondary-container/90 italic">
+                            "Before choosing a pot size, consider the 'Two-Inch Rule.' Your pot should be roughly 2 inches wider than the root ball of the plant you're moving into it. Too much extra soil holds unnecessary water and can lead to rot."
+                        </p>
+</div>
+</div>
+<!-- Checkbox Action -->
+<div class="py-12 border-y border-outline-variant/30 flex flex-col items-center gap-6">
+<label class="flex items-center gap-4 cursor-pointer group">
+<div class="relative">
+<input class="peer hidden" id="mark-complete" type="checkbox"/>
+<div class="w-10 h-10 rounded-full border-2 border-outline group-hover:border-primary transition-all flex items-center justify-center peer-checked:bg-primary peer-checked:border-primary">
+<span class="material-symbols-outlined text-white opacity-0 peer-checked:opacity-100 transition-opacity">check</span>
+</div>
+</div>
+<span class="text-headline-md font-headline-md text-on-surface-variant peer-checked:text-primary transition-colors">Mark this step as complete</span>
+</label>
+<p class="text-label-sm text-on-surface-variant/60">This will unlock the next step in Stage 1.</p>
+</div>
+<!-- Navigation -->
+<footer class="flex justify-between items-center pt-8">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary font-label-md transition-all px-4 py-2 rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined">arrow_back</span>
+                        Previous: Introduction
+                    </button>
+<button class="flex items-center gap-2 bg-primary text-on-primary px-8 py-3 rounded-full font-label-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all">
+                        Next: Selecting Soil
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</footer>
+</article>
+</section>
+<!-- Right Side: Mini Stats / Community Snippet (Bento style) -->
+<aside class="hidden xl:block w-72 space-y-6">
+<div class="bg-tertiary-fixed rounded-lg p-6">
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant mb-2">trending_up</span>
+<h4 class="text-label-md font-bold text-on-tertiary-fixed-variant mb-1">Community Insight</h4>
+<p class="text-label-sm text-on-tertiary-fixed-variant opacity-80">84% of gardeners in your zone chose Terracotta for their first balcony project.</p>
+</div>
+<div class="bg-surface-container-high rounded-lg p-6 space-y-4">
+<h4 class="text-label-md font-bold text-on-surface">Supplies Needed</h4>
+<div class="space-y-3">
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-label-sm">3x 10" Pots</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-label-sm">Saucers/Drip Trays</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span class="text-label-sm opacity-50">Drill (Optional)</span>
+</div>
+</div>
+</div>
+<div class="relative rounded-lg overflow-hidden h-40">
+<img class="w-full h-full object-cover" data-alt="A macro shot of rich, dark organic potting soil being poured into a clean pot. The texture of the soil is grainy and moist, with tiny bits of perlite visible. The lighting is crisp and clear, highlighting the contrast between the dark soil and the light-colored pot, evoking a sense of groundedness and the tactile joy of beginning a new gardening task." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuMmr036aBZ-Nk0q3fj4C6w1RYiePS5HmIX-yz3NdYDIg76AxQeYgEYLE6HMilZdwbTQwl01mp39RGWZkpTv49lL0ZwmndnkIxfUhemnDj4F-OpkeZNsPNqC3PSWPr5BKAEjNLeO4qZp41GkkLzoBNiRVa7lm9lRGDMAePIXpLWPj6H_iprFvSiWECYODgF5O5j9oBlh5I2Edrtu46NoSy8i8yWSo3JllPZ5xnG5nVuNz0CM0o6faaW8fjrdK1YT_dscKd26B-5Xjj"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+<span class="text-white text-label-sm font-bold">Coming up next: Soil secrets</span>
+</div>
+</div>
+</aside>
+</main>
+<!-- Footer: Execution of JSON style_ keys -->
+<footer class="bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant dark:border-outline full-width mt-section-gap">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-12 max-w-container-max mx-auto">
+<div class="mb-8 md:mb-0">
+<span class="text-headline-sm font-headline-sm font-bold text-primary dark:text-inverse-primary">Hobbify</span>
+<p class="text-body-md font-body-md text-on-surface-variant dark:text-surface-variant mt-2 max-w-xs">© 2024 Hobbify. Discover your next passion.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-label-sm font-label-sm text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">About Us</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">Help Center</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">Careers</a>
+</div>
+<div class="mt-8 md:mt-0 flex gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:opacity-70 cursor-pointer transition-opacity">
+<span class="material-symbols-outlined text-[18px]">public</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:opacity-70 cursor-pointer transition-opacity">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for the "Mark Complete" checkbox
+        const checkbox = document.getElementById('mark-complete');
+        checkbox.addEventListener('change', (e) => {
+            if(e.target.checked) {
+                // Trigger a confetti-like subtle effect or just feedback
+                console.log('Step marked complete');
+            }
+        });
+
+        // Simple scroll reveal for sections
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-4');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section, article > section').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-4');
+            observer.observe(el);
+        });
+    </script>
+</body></html>

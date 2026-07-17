@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hobbify - Profile</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+        .profile-card-shadow {
+            box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#ffffff",
+                      "on-surface-variant": "#44474a",
+                      "on-primary": "#ffffff",
+                      "tertiary-fixed": "#eadef9",
+                      "tertiary-container": "#1f192c",
+                      "on-secondary-fixed-variant": "#2a4e36",
+                      "primary-fixed": "#e2e2e5",
+                      "primary": "#000101",
+                      "error-container": "#ffdad6",
+                      "on-surface": "#191c1d",
+                      "inverse-on-surface": "#f0f1f2",
+                      "on-secondary-fixed": "#00210e",
+                      "tertiary-fixed-dim": "#cdc2dc",
+                      "secondary-container": "#c3edcb",
+                      "surface": "#f8f9fa",
+                      "inverse-primary": "#c6c6c9",
+                      "error": "#ba1a1a",
+                      "background": "#f8f9fa",
+                      "on-error-container": "#93000a",
+                      "surface-container-high": "#e7e8e9",
+                      "on-primary-container": "#838486",
+                      "inverse-surface": "#2e3132",
+                      "on-secondary-container": "#476d52",
+                      "outline-variant": "#c5c6ca",
+                      "tertiary": "#020009",
+                      "on-primary-fixed": "#1a1c1e",
+                      "primary-fixed-dim": "#c6c6c9",
+                      "primary-container": "#1a1c1e",
+                      "surface-tint": "#5d5e61",
+                      "on-primary-fixed-variant": "#454749",
+                      "on-tertiary-fixed": "#1f182b",
+                      "secondary": "#41664c",
+                      "surface-variant": "#e1e3e4",
+                      "on-secondary": "#ffffff",
+                      "outline": "#75777a",
+                      "on-tertiary-fixed-variant": "#4b4358",
+                      "on-tertiary-container": "#8a8098",
+                      "surface-container": "#edeeef",
+                      "surface-dim": "#d9dadb",
+                      "surface-bright": "#f8f9fa",
+                      "secondary-fixed-dim": "#a7d0b0",
+                      "on-tertiary": "#ffffff",
+                      "secondary-fixed": "#c3edcb",
+                      "on-error": "#ffffff",
+                      "surface-container-low": "#f3f4f5",
+                      "surface-container-highest": "#e1e3e4",
+                      "on-background": "#191c1d"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "margin-desktop": "64px",
+                      "gutter": "24px",
+                      "section-gap": "80px",
+                      "margin-mobile": "20px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Lexend"],
+                      "headline-lg-mobile": ["Lexend"],
+                      "label-sm": ["Be Vietnam Pro"],
+                      "label-md": ["Be Vietnam Pro"],
+                      "headline-xl": ["Lexend"],
+                      "body-md": ["Be Vietnam Pro"],
+                      "headline-md": ["Lexend"],
+                      "body-lg": ["Be Vietnam Pro"]
+              },
+              "fontSize": {
+                      "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                      "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                      "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full z-40 flex justify-between items-center px-margin-mobile py-4 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl">
+<button class="active:scale-95 transition-all text-on-surface-variant hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tight text-primary dark:text-primary-fixed">Hobbify</h1>
+<button class="active:scale-95 transition-all text-on-surface-variant hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</header>
+<main class="px-margin-mobile mt-8 max-w-md mx-auto">
+<!-- Profile Header Section -->
+<section class="flex flex-col items-center mb-section-gap">
+<div class="relative mb-6">
+<div class="w-32 h-32 rounded-full overflow-hidden border-4 border-surface-container profile-card-shadow">
+<img class="w-full h-full object-cover" data-alt="A professional and warm studio portrait of a young woman named Makenna with a gentle smile, set against a soft lavender and mint green abstract background. The lighting is bright and airy, reflecting a modern light-mode aesthetic. Her appearance is friendly and approachable, capturing the welcoming and community-focused essence of the Hobbify brand system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtJCiOo_HsVoZvZ83M4YGfnizBrGlqrSRhP3NP0xxYWdvWLiZb1Itc0gzCwJnSgmQ8c32-KAIvN1GBoF5c4egs90buqAyhOz81w1GTf514eYiDKkFUB3gYtq1PsSpoGtLBqQ67CfBhoaii9Wof-WdJT1aqADKuiFQqqPyYO6GvEtSctOkQ8M0Mv8tAmCCUsOXmlkISZeW5-PdkhosUJc__lmpIe4Bdt294F8DqdL34_GheJsvmcY5e35JV0sEEPjScLPiOhK_zLxfy"/>
+</div>
+<div class="absolute bottom-0 right-0 bg-secondary-container p-2 rounded-full shadow-md">
+<span class="material-symbols-outlined text-on-secondary-container text-[20px]" data-icon="edit">edit</span>
+</div>
+</div>
+<div class="text-center">
+<h2 class="font-headline-md text-headline-md text-primary mb-1">Makenna Donin</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">makenna.d@example.com</p>
+</div>
+</section>
+<!-- Stats Grid (Bento Style) -->
+<section class="grid grid-cols-2 gap-4 mb-8">
+<div class="bg-surface-container-low p-6 rounded-lg text-center profile-card-shadow">
+<p class="font-headline-md text-headline-md text-secondary">12</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Hobbies</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-lg text-center profile-card-shadow">
+<p class="font-headline-md text-headline-md text-secondary">48</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Sessions</p>
+</div>
+</section>
+<!-- Settings Links List -->
+<section class="space-y-4 mb-8">
+<h3 class="font-label-md text-label-md text-on-surface-variant px-2 uppercase tracking-widest mb-2">Account Settings</h3>
+<a class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-lg profile-card-shadow active:scale-98 transition-transform" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant" data-icon="lock">lock</span>
+</div>
+<span class="font-body-md text-body-md">Privacy Policy</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-lg profile-card-shadow active:scale-98 transition-transform" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-fixed-variant" data-icon="description">description</span>
+</div>
+<span class="font-body-md text-body-md">Terms of Service</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-lg profile-card-shadow active:scale-98 transition-transform" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+</div>
+<span class="font-body-md text-body-md">Notifications</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</a>
+</section>
+<!-- Danger Zone / Logout -->
+<section class="mt-12">
+<button class="w-full py-4 px-6 bg-primary text-on-primary rounded-full font-label-md text-label-md flex items-center justify-center gap-2 active:scale-95 transition-transform shadow-lg">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Log Out
+            </button>
+<p class="text-center mt-6 font-label-sm text-label-sm text-outline">Version 2.4.0 (Build 882)</p>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-margin-mobile py-3 bg-surface-container-lowest dark:bg-surface-container-low shadow-[0_-4px_24px_rgba(0,0,0,0.04)] rounded-t-lg">
+<!-- Discover -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-variant/50 dark:hover:bg-surface-variant/20 scale-95 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-label-sm text-label-sm">Discover</span>
+</a>
+<!-- My Hobbies -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-variant/50 dark:hover:bg-surface-variant/20 scale-95 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-label-sm text-label-sm">My Hobbies</span>
+</a>
+<!-- Profile (Active) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-on-secondary-fixed-variant text-on-secondary-container dark:text-secondary-fixed rounded-full px-5 py-1.5 scale-95 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+        // Simple touch interaction feedback
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('touchstart', () => {
+                el.style.opacity = '0.7';
+            });
+            el.addEventListener('touchend', () => {
+                el.style.opacity = '1';
+            });
+        });
+    </script>
+</body></html>

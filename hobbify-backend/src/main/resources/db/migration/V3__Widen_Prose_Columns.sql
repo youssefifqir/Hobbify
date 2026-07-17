@@ -1,0 +1,2 @@
+ALTER TABLE app_hobby ALTER COLUMN description TYPE TEXT;
+ALTER TABLE app_step ALTER COLUMN content TYPE TEXT;

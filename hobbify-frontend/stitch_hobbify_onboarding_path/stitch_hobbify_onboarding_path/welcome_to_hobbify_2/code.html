@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#44474a",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#eadef9",
+                        "tertiary-container": "#1f192c",
+                        "on-secondary-fixed-variant": "#2a4e36",
+                        "primary-fixed": "#e2e2e5",
+                        "primary": "#000101",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#191c1d",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-secondary-fixed": "#00210e",
+                        "tertiary-fixed-dim": "#cdc2dc",
+                        "secondary-container": "#c3edcb",
+                        "surface": "#f8f9fa",
+                        "inverse-primary": "#c6c6c9",
+                        "error": "#ba1a1a",
+                        "background": "#f8f9fa",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#e7e8e9",
+                        "on-primary-container": "#838486",
+                        "inverse-surface": "#2e3132",
+                        "on-secondary-container": "#476d52",
+                        "outline-variant": "#c5c6ca",
+                        "tertiary": "#020009",
+                        "on-primary-fixed": "#1a1c1e",
+                        "primary-fixed-dim": "#c6c6c9",
+                        "primary-container": "#1a1c1e",
+                        "surface-tint": "#5d5e61",
+                        "on-primary-fixed-variant": "#454749",
+                        "on-tertiary-fixed": "#1f182b",
+                        "secondary": "#41664c",
+                        "surface-variant": "#e1e3e4",
+                        "on-secondary": "#ffffff",
+                        "outline": "#75777a",
+                        "on-tertiary-fixed-variant": "#4b4358",
+                        "on-tertiary-container": "#8a8098",
+                        "surface-container": "#edeeef",
+                        "surface-dim": "#d9dadb",
+                        "surface-bright": "#f8f9fa",
+                        "secondary-fixed-dim": "#a7d0b0",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#c3edcb",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-background": "#191c1d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "section-gap": "80px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Lexend"],
+                        "headline-lg-mobile": ["Lexend"],
+                        "label-sm": ["Be Vietnam Pro"],
+                        "label-md": ["Be Vietnam Pro"],
+                        "headline-xl": ["Lexend"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "headline-md": ["Lexend"],
+                        "body-lg": ["Be Vietnam Pro"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md selection:bg-secondary-container">
+<!-- Top Navigation (Shell Implementation) -->
+<header class="sticky top-0 w-full z-40 flex justify-between items-center px-margin-mobile py-4 bg-surface/80 backdrop-blur-xl transition-all duration-300">
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tight text-primary">Hobbify</div>
+<button class="p-2 text-on-surface-variant active:scale-95 transition-all">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</header>
+<main class="min-h-screen">
+<!-- Hero Section -->
+<section class="relative px-margin-mobile pt-8 pb-16 overflow-hidden">
+<!-- Background Decorative Elements -->
+<div class="absolute -top-24 -right-12 w-64 h-64 bg-secondary-container/40 rounded-full blur-3xl -z-10 animate-float"></div>
+<div class="absolute top-1/2 -left-20 w-80 h-80 bg-tertiary-fixed/30 rounded-full blur-3xl -z-10" style="animation-delay: 2s;"></div>
+<div class="max-w-md mx-auto">
+<div class="inline-flex items-center gap-2 bg-secondary-fixed/50 px-4 py-2 rounded-full mb-6">
+<span class="material-symbols-outlined text-on-secondary-container text-sm">spark</span>
+<span class="font-label-md text-label-md text-on-secondary-container">Friendly mentor</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary mb-6">
+                    Your next <span class="text-secondary">passion</span> starts here
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 leading-relaxed">
+                    Stop scrolling and start doing. Discover hobbies that bring you joy, community, and a sense of accomplishment.
+                </p>
+<div class="flex flex-col gap-4">
+<button class="w-full bg-primary text-on-primary py-5 rounded-full font-label-md text-label-md flex items-center justify-center gap-2 shadow-lg active:scale-[0.98] transition-transform">
+                        Browse Hobbies
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="w-full bg-surface-container text-on-surface py-5 rounded-full font-label-md text-label-md border border-outline/10 active:scale-[0.98] transition-transform">
+                        Sign Up / Log In
+                    </button>
+</div>
+</div>
+</section>
+<!-- Visual Teaser Card (Asymmetric Bento Style) -->
+<section class="px-margin-mobile py-8">
+<div class="relative w-full h-[240px] rounded-lg overflow-hidden shadow-xl mb-12">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A warm, inviting close-up of a person's hands shaping wet clay on a pottery wheel. The lighting is soft and golden, highlighting the tactile texture of the mud. The background is a blurred artisan studio with wooden shelves filled with ceramics, creating a serene and encouraging atmosphere in a modern light-mode style with soft mint accents." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCP4wJ7wLxjbBs6yIasNOAsg95S7mAwEnjJs_16ZJFWBuvjai0qBCkR7Agu_gBF8pgOJc8IpsfnN_BDYuNC17DGIO8xw4uOYdt2yc7BgCYQ3cYYNmcs2TXMW2t-dXoxRdrgNpX6IqgVk2SqjItBbFX7F2eE9DCV2xduAePJewJ5nxumUnKt19FEk7iu765adEvTSDK9FNBdJxfQWkIFbinBcmYqJeR_O_WqN7sAxnXXIh4TPtEpZR-H7o67eml2u4J_UYbkGYZSBU5U')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-on-primary">
+<div class="font-headline-md text-headline-md mb-1">Pottery Workshop</div>
+<div class="font-label-sm text-label-sm opacity-90">4.9 • Starting Saturday</div>
+</div>
+</div>
+<!-- Horizontal Scroll Popular Hobbies -->
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-headline-md text-headline-md text-primary">Popular Choices</h2>
+<span class="text-secondary font-label-md text-label-md">See all</span>
+</div>
+<div class="flex gap-gutter overflow-x-auto pb-8 -mx-margin-mobile px-margin-mobile snap-x no-scrollbar">
+<!-- Hobby 1: Pottery (Already featured above but as a card here too) -->
+<div class="min-w-[280px] snap-start bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm border border-outline-variant/30 transition-transform hover:scale-[1.02]">
+<div class="h-48 bg-cover bg-center" data-alt="An artistic high-angle shot of various hand-built pottery pieces drying on a rustic wooden table. The aesthetic is clean and minimalist, using a soft palette of whites and earth tones with subtle mint green glazes. The natural sunlight pours in from a side window, creating a tranquil and creative environment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDW79pktyUF3IaDSqUQO8jCOLiKB71WO6pyg6GFY7DtwLC8TDodvHhp17lpYKyqzpVpvjdgtYK4kwfKYtr2C_MiXGW2pqZyvjc_NvZCO3AlSmbgylQSDRt1GX_pWqaQHf2j5rklZGPnLG00RKaIOJBWTy0bJedfcXjFhCE3idDHnzMzZOnPIrfSj4jqK8Ag9OyTIWMnlR_zAj7fIWtbNQ0jTfRCkUnhgPHo0QpkS6mRjOOV-UFlGE-q2fb9yzOGf1iU6dx0p6gPPgty')"></div>
+<div class="p-6">
+<div class="flex items-center gap-2 mb-2">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] uppercase font-bold rounded-full">Artistic</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 text-primary">Pottery</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Master the wheel and create beautiful ceramics from scratch.</p>
+</div>
+</div>
+<!-- Hobby 2: Urban Gardening -->
+<div class="min-w-[280px] snap-start bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm border border-outline-variant/30 transition-transform hover:scale-[1.02]">
+<div class="h-48 bg-cover bg-center" data-alt="A lush urban balcony garden filled with vibrant green plants in terra cotta pots. High-key natural lighting emphasizes the fresh, healthy leaves of herbs and flowers. The design reflects a modern-organic hybrid style with a palette of deep greens and soft lavender accents, promoting a sense of peace and low-pressure discovery." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBQku2r0prvgc4nWpKAOPDCFw35SepqQ2KoJgsfMpxEh1dWYtnzkvxE5fULmaBtHV7h3C2k6JCSLrEQk63dr_53_f4Ak6LElWsw5RkRrWgkgHLBvoJ6JUXFPGTBk7-J5skmiEBcJn-0KVZngI8yUA0Q896PgvmFq7H8up11i-nll7Xdy9g5wTfdJPoUsP_8KB7GTUSXYQbo17s4a41aPtAVxcNzmlulY9BkCyn3F68fnPjNQtWXkCHa301LLaQmu_02-6EktWO_rnqS')"></div>
+<div class="p-6">
+<div class="flex items-center gap-2 mb-2">
+<span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant text-[10px] uppercase font-bold rounded-full">Nature</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 text-primary">Urban Gardening</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Transform your small space into a thriving green sanctuary.</p>
+</div>
+</div>
+<!-- Hobby 3: Bread Baking -->
+<div class="min-w-[280px] snap-start bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm border border-outline-variant/30 transition-transform hover:scale-[1.02]">
+<div class="h-48 bg-cover bg-center" data-alt="A beautifully scored, golden-brown sourdough loaf resting on a linen cloth in a bright, modern kitchen. The scene is illuminated by warm, soft light that highlights the crust's texture and flour dusting. The mood is encouraging and tactile, echoing the low-pressure discovery brand identity with clean, airy spacing." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBPKgUwX95FBgNJ4AZE-Z2aO1QxLVx5T-3gPD2L1EO6dA4PtRroWba0orK2TJABJ2fj0BmvEOgX4eEha_aiOU3nlnd5yrEUoCNwYxoYlZyra4SeDnYbrUm5iMUDH4T6tBIF049yCbfAJdxYBLl3mJa0Yje2E48w_KkWS2PcXuWTO33tzjbJyBFE2KQ6bKjOetQ7oraMmVea7pWP2GKPnbjqPjM3UI6t3B58maAmXd7_FIIiU1vw9JX-ef1s_YBIVlFODiLFaiyPRXlF')"></div>
+<div class="p-6">
+<div class="flex items-center gap-2 mb-2">
+<span class="px-3 py-1 bg-secondary-fixed text-on-secondary-fixed-variant text-[10px] uppercase font-bold rounded-full">Culinary</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 text-primary">Bread Baking</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">The art of sourdough and slow-fermentation made simple.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Mentor Teaser -->
+<section class="px-margin-mobile py-12 mb-24">
+<div class="bg-primary-container text-on-primary rounded-lg p-8 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary/20 rounded-full blur-2xl translate-x-1/2 -translate-y-1/2"></div>
+<div class="relative z-10">
+<h2 class="font-headline-lg text-headline-lg mb-4">Don't go it alone</h2>
+<p class="font-body-md text-body-md text-on-primary-container mb-6">Our friendly mentors are experts who guide you step-by-step through your first few projects.</p>
+<div class="flex -space-x-3 mb-6">
+<div class="w-10 h-10 rounded-full border-2 border-primary-container bg-cover bg-center" data-alt="Close-up headshot of a smiling, friendly person in a bright art studio environment, representing a welcoming mentor in a modern light-mode UI style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCLDRkAt61OebCGL2_8dG8cJPQzPaocMSytRsDaMp1AFyGpH4SokKWu97vn9-zdYw1zzBzFakX75nyoeX6_-7LfUdIB3IRxNGaquXhaWnbiE4zrZ1Su9fsboOmVU67a8jhKrDHEtKcNy2bEsZJjgwJFiaGwxogCFA7wkzJejiQ7uZ5-HChDsu62Pq8OVuT6ylVGX3ZuxrUlHpVxZQ0I6J12Yjgdvim2eBJjTHg6nsry_LAX0EjCqDFnjXiTQAuv7hKJNbMltro7i9EH')"></div>
+<div class="w-10 h-10 rounded-full border-2 border-primary-container bg-cover bg-center" data-alt="Close-up headshot of a diverse, cheerful mentor wearing a gardener's apron, set against a background of lush greenery." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAIttY02Z1fFpR5FQV6QqcBE6mflA-MXGvXdTrVkcak4-ar0gkvTjf191SzOmrn9zAbzdB9F2vuXs7KeI3JSnObFj7g4VYExsrClQ8UVnqHUglXaa0MNuNYoS0dcw3PLU-GKuSkF4gL0yr0eP5aGAHYbiSJGcgMQ6GjHZgAQWoR4mWtCobaMhpzzk0Vw6o2CVmkG9_aucMw52957Ss8GLG8JhYWPUwk0LgLQ22Yrvo53JMHdRQGaltejJVMJGRWqpIx7A8L2Xcprxv2')"></div>
+<div class="w-10 h-10 rounded-full border-2 border-primary-container bg-cover bg-center" data-alt="Close-up headshot of an approachable mentor in a clean, modern kitchen setting, smiling warmly at the camera." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDP_gZM43sFFvTgrEuSJhYpax1sAeuNa762atOwr1ii49Ad3iMj2B2ImGCNpTxNDqdn1OWdtBpjXg1jlSBxCEhzVoDkAl4NXGymdTMXKRRBhVAAa0WM4zIzj0dBigtCSUtJhhXzm79P9V1PRqpevicM7jyOZmq9vR0lGiuvR0A7jn8m-yk_6zXWJcQBBnAVZTSb0tEUCgX5sl-uUywjyDb6vWVxZ4GRQh86Km4EEn0qufVoD3pNu0PUMwobhRWDeorCPYmIqq6bpX7Z')"></div>
+<div class="w-10 h-10 rounded-full border-2 border-primary-container bg-secondary-container flex items-center justify-center text-[10px] font-bold text-on-secondary-container">+42</div>
+</div>
+<button class="bg-on-primary text-primary px-6 py-3 rounded-full font-label-md text-label-md shadow-lg active:scale-95 transition-all">Learn how it works</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation (Shell Implementation) -->
+<!-- Determined as landing page (pre-auth), we might suppress or show minimal shell. 
+         Based on rules, we render a BottomNavBar for top-level ecosystem destinations. 
+         Even for landing, we'll provide the shell as a "preview" of the logged-in state or common actions. -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-margin-mobile py-3 bg-surface-container-lowest shadow-[0_-4px_24px_rgba(0,0,0,0.04)] rounded-t-lg">
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-5 py-1.5 transition-transform duration-200 scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-label-sm text-label-sm">Discover</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/50 transition-transform duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<span class="font-label-sm text-label-sm">My Hobbies</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/50 transition-transform duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+        // Simple scroll interaction for Header
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md');
+                header.classList.remove('bg-surface/80');
+                header.classList.add('bg-white');
+            } else {
+                header.classList.remove('shadow-md');
+                header.classList.add('bg-surface/80');
+                header.classList.remove('bg-white');
+            }
+        });
+
+        // Hover effect for cards using scale
+        const cards = document.querySelectorAll('.snap-start');
+        cards.forEach(card => {
+            card.addEventListener('touchstart', () => card.style.transform = 'scale(0.98)');
+            card.addEventListener('touchend', () => card.style.transform = 'scale(1)');
+        });
+    </script>
+</body></html>

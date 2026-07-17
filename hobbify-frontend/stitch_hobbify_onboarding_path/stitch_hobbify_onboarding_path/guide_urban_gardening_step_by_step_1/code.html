@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hobbify - Urban Gardening Guide</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&amp;family=Lexend:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#2e3132",
+                        "on-background": "#191c1d",
+                        "on-surface": "#191c1d",
+                        "on-primary-fixed-variant": "#454749",
+                        "on-secondary-container": "#476d52",
+                        "secondary-container": "#c3edcb",
+                        "inverse-primary": "#c6c6c9",
+                        "on-tertiary-container": "#8a8098",
+                        "background": "#f8f9fa",
+                        "tertiary": "#020009",
+                        "surface-bright": "#f8f9fa",
+                        "inverse-on-surface": "#f0f1f2",
+                        "primary-container": "#1a1c1e",
+                        "surface-tint": "#5d5e61",
+                        "on-primary-fixed": "#1a1c1e",
+                        "on-surface-variant": "#44474a",
+                        "on-tertiary-fixed": "#1f182b",
+                        "tertiary-fixed": "#eadef9",
+                        "secondary-fixed": "#c3edcb",
+                        "on-tertiary-fixed-variant": "#4b4358",
+                        "on-secondary-fixed": "#00210e",
+                        "surface": "#f8f9fa",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e1e3e4",
+                        "surface-container-low": "#f3f4f5",
+                        "secondary": "#41664c",
+                        "surface-container": "#edeeef",
+                        "tertiary-container": "#1f192c",
+                        "on-error": "#ffffff",
+                        "outline-variant": "#c5c6ca",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#838486",
+                        "primary": "#000101",
+                        "primary-fixed-dim": "#c6c6c9",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#75777a",
+                        "surface-container-highest": "#e1e3e4",
+                        "primary-fixed": "#e2e2e5",
+                        "surface-dim": "#d9dadb",
+                        "secondary-fixed-dim": "#a7d0b0",
+                        "on-secondary-fixed-variant": "#2a4e36",
+                        "tertiary-fixed-dim": "#cdc2dc",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#e7e8e9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "section-gap": "80px",
+                        "unit": "8px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Be Vietnam Pro"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "headline-xl": ["Lexend"],
+                        "label-md": ["Be Vietnam Pro"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "headline-lg-mobile": ["Lexend"],
+                        "headline-lg": ["Lexend"],
+                        "headline-md": ["Lexend"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .custom-shadow {
+            box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.04);
+        }
+        .backdrop-blur-custom {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .progress-bar-glow {
+            box-shadow: 0 0 12px rgba(195, 237, 203, 0.8);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .step-checkbox:checked + .step-card {
+            border-color: #c3edcb;
+            background-color: #f0fdf4;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary-container">
+<!-- TopNavBar -->
+<header class="bg-surface/80 dark:bg-surface/80 backdrop-blur-md shadow-sm dark:shadow-none docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-8">
+<a class="text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary tracking-tight" href="#">Hobbify</a>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-label-md font-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Discover</a>
+<a class="text-label-md font-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">My Hobbies</a>
+<a class="text-label-md font-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Community</a>
+<a class="text-label-md font-label-md text-primary dark:text-inverse-primary border-b-2 border-primary dark:border-inverse-primary pb-1" href="#">Guide</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant p-2 hover:bg-surface-container rounded-full transition-all">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant p-2 hover:bg-surface-container rounded-full transition-all">settings</button>
+<div class="h-10 w-10 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional and friendly portrait of a young woman with a warm smile, set against a soft, out-of-focus indoor environment with gentle natural light. She has dark hair and is wearing a simple, elegant top. The image has a clean, high-key modern look that aligns with a sophisticated lifestyle app aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSXYSaiRexT4WsoBPFm-iUyCJYYhJhgDJMqCzxRMS5Iy27xg_jOBZNqvh5owAR6udoEuF9AZyJVHM1huhTW6PmZdffblm1BHZMQ0QqEJ5McWMnHDMX3HhgAVxCTR-tJj6wzZ1hmdYRjeRUnpINhMekfJjPxFHNLo47ewdm6RJrK2MokvQHoM0_u5Xx11yFd9V3T4Nd7UoBGueWvaGGAzkeZatfNKrJu4X3TCP17WuU-BIElC7oqn4yPKAQOXqwz9QfkP9siy_fcClo"/>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-desktop py-10 min-h-screen">
+<!-- Header & Progress Section -->
+<section class="mb-section-gap">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+<div>
+<div class="flex items-center gap-2 mb-2 text-secondary font-label-md">
+<span class="material-symbols-outlined text-[18px]">potted_plant</span>
+<span>Expert Guided Track</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary mb-2">Urban Gardening</h1>
+<p class="text-on-surface-variant text-body-lg max-w-2xl">Turn your balcony or windowsill into a lush oasis. I'll be your guide through every seed and sprout!</p>
+</div>
+<div class="flex flex-col items-end gap-2">
+<span class="font-label-md text-on-surface-variant">25% Complete</span>
+<div class="w-64 h-3 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container w-[25%] rounded-full progress-bar-glow"></div>
+</div>
+</div>
+</div>
+<!-- Stage Navigation -->
+<div class="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
+<button class="px-6 py-3 rounded-full bg-primary text-on-primary font-label-md flex items-center gap-2 flex-shrink-0 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+                    Stage 1: Gear &amp; Setup
+                </button>
+<button class="px-6 py-3 rounded-full bg-surface-container text-on-surface-variant font-label-md flex items-center gap-2 flex-shrink-0 hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-[20px]">agriculture</span>
+                    Stage 2: Planting
+                </button>
+<button class="px-6 py-3 rounded-full bg-surface-container text-on-surface-variant font-label-md flex items-center gap-2 flex-shrink-0 hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-[20px]">water_drop</span>
+                    Stage 3: Nurturing
+                </button>
+<button class="px-6 py-3 rounded-full bg-surface-container text-on-surface-variant font-label-md flex items-center gap-2 flex-shrink-0 hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-[20px]">content_cut</span>
+                    Stage 4: Harvesting
+                </button>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Left Content: Actionable Steps -->
+<div class="lg:col-span-8 space-y-6">
+<div class="flex items-center justify-between mb-2">
+<h2 class="font-headline-md text-headline-md text-primary">Your First Moves</h2>
+<span class="text-label-sm text-on-surface-variant bg-surface-container px-3 py-1 rounded-full">4 Steps Remaining</span>
+</div>
+<!-- Step Card 1 (Completed) -->
+<div class="relative group">
+<input checked="" class="peer absolute top-8 left-8 w-6 h-6 rounded-full border-outline text-secondary focus:ring-secondary cursor-pointer z-10" type="checkbox"/>
+<div class="step-card bg-surface-container-lowest p-8 rounded-lg border-2 border-transparent custom-shadow transition-all group-hover:scale-[1.01] flex gap-6 pl-20 opacity-70">
+<div class="flex-1">
+<h3 class="font-headline-md text-headline-md mb-2 text-on-surface-variant line-through">Assess Your Light</h3>
+<p class="text-body-md text-on-surface-variant mb-4">"Track where the sun hits your space for at least 6 hours. This is the foundation of your garden's success!"</p>
+<div class="flex items-center gap-2 text-secondary font-label-md">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>Mastered</span>
+</div>
+</div>
+<div class="w-32 h-32 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A bright sun-drenched balcony with minimalist modern furniture. Golden hour light casts long, soft shadows across clean white walls and wooden decking, illustrating the concept of light tracking for gardening. The style is airy and serene, with a high-end architectural photography feel and a warm color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS7HuSmM6IhpY8KICMUXXzYj6L7fH4AMFFeUDzcX1KittsAi2VlO0s2WwS_ho9DbPpYUW7el0ebf7yH-41-zxKnEf2xvA1_FnKUZQpRUw7i3yveBMEfuyc4b3sIjmW13W-NVTfaMZUL546vf1IdyfHDuqxfw6-S4E5Y3o7Cy2sYO8aho3VCoQIlgjZKnC9phsFzay5I94HvFecLeEOVVeCI88ujOYkf0Bm4tjRICdTvsh2TPo0SvUwv6M4ZLC8MC_JmTLuzjF7-h9T"/>
+</div>
+</div>
+</div>
+<!-- Step Card 2 (Active) -->
+<div class="relative group">
+<input class="peer absolute top-8 left-8 w-6 h-6 rounded-full border-outline text-secondary focus:ring-secondary cursor-pointer z-10" type="checkbox"/>
+<div class="step-card bg-surface-container-lowest p-8 rounded-lg border-2 border-primary/5 custom-shadow transition-all group-hover:scale-[1.01] flex gap-6 pl-20 ring-2 ring-secondary/10">
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-2 text-secondary font-label-md">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>High Priority</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">Choose Your Containers</h3>
+<p class="text-body-md text-on-surface-variant mb-6">"Look for pots with drainage holes. Don't worry about being fancy—repurposed crates or fabric bags work wonders too. Just make sure they have room to breathe!"</p>
+<div class="flex gap-3">
+<button class="px-4 py-2 rounded-full bg-secondary-container text-on-secondary-container font-label-md hover:opacity-90 transition-opacity">View Gear List</button>
+<button class="px-4 py-2 rounded-full bg-surface-container text-on-surface-variant font-label-md hover:bg-surface-container-high transition-all">Watch Tutorial</button>
+</div>
+</div>
+<div class="w-32 h-32 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A collection of modern-organic terracotta pots and sleek fabric planters arranged neatly on a wooden floor. The lighting is soft and diffuse, highlighting the tactile textures of the materials. The color palette features warm earthy tones and soft grays, creating a professional and welcoming atmosphere for a beginner gardener." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnzUHKHbqzeQwRteHF6YyDuk1XE3Hf5aWg2mEl9OdGcbguSmPAWJUBtorWX9A6658VHjUgomjAynCtA4nvIh_WhC6b5LqN_-Ia9jZupCS4But_gEn5EG2LYNtsOt85L8W2_6aDaq_ikeqxFc75d3Imd_zkjura8d3MuzYIOx-8PluLOGoxPJnm2yFRACafjUxpCXtntdlOjvMdzyqi14V2qPo54pADvugJJtNiyQ5vbiu1gQClfTocRfRQ0WLAu6fePiJuGsO1wB_d"/>
+</div>
+</div>
+</div>
+<!-- Step Card 3 -->
+<div class="relative group">
+<input class="peer absolute top-8 left-8 w-6 h-6 rounded-full border-outline text-secondary focus:ring-secondary cursor-pointer z-10" type="checkbox"/>
+<div class="step-card bg-surface-container-lowest p-8 rounded-lg border-2 border-transparent custom-shadow transition-all group-hover:scale-[1.01] flex gap-6 pl-20">
+<div class="flex-1">
+<h3 class="font-headline-md text-headline-md mb-2">The 'Magic' Soil Mix</h3>
+<p class="text-body-md text-on-surface-variant mb-4">"Garden soil is too heavy for pots. You want a 'potting mix'—it's fluffy and lets roots explore easily. I recommend a coco-coir based blend."</p>
+</div>
+<div class="w-32 h-32 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A close-up shot of rich, dark potting soil being gently scooped into a pot. The texture is crumbly and light, with visible organic matter. The background is a clean, minimalist potting station with soft focus. The lighting is bright and clear, conveying a sense of quality and the joy of manual hobby work." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBK7wiM-KOZmWGEZHfxM-gZt2Pe1VKTfJ5EjbFzcC4EpxulDaFvVtIELVqOi0D-_EORsUzN7Y-rydeZEnzEaBLJytzDyxxdQJyKLeX8PVYVEIwM3QWGYScd1P6eQLGU6lH88RdvTycUMyTPEW8d_8SDcERuAupJNwreB9pCdbFdyufD9srxLIoI0mmxNU8gqh1ecUZS3mNPVgaqmG0ez-B2wc7DZkRSLjiyGIn-6yxseX75IrGfWI4U4N-kl-Rn0JiZTta1D8FeoVUi"/>
+</div>
+</div>
+</div>
+<!-- Step Card 4 -->
+<div class="relative group">
+<input class="peer absolute top-8 left-8 w-6 h-6 rounded-full border-outline text-secondary focus:ring-secondary cursor-pointer z-10" type="checkbox"/>
+<div class="step-card bg-surface-container-lowest p-8 rounded-lg border-2 border-transparent custom-shadow transition-all group-hover:scale-[1.01] flex gap-6 pl-20">
+<div class="flex-1">
+<h3 class="font-headline-md text-headline-md mb-2">Seed Shopping Strategy</h3>
+<p class="text-body-md text-on-surface-variant mb-4">"For beginners, I always suggest herbs like Basil or hardy greens like Kale. They are forgiving and give you that 'I did it!' feeling fast."</p>
+</div>
+<div class="w-32 h-32 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Vibrant green basil leaves and fresh kale sprouts growing in small starter pots. The image is captured with a shallow depth of field, emphasizing the freshness and vitality of the plants. The setting is a bright, modern windowsill. The color palette is dominated by lush greens and soft neutral backgrounds." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7FM3u54yiAxOr7Eybfr-gt2hbMmUl7vBfbLUetI-K_ySST32Hi4-HM_LvjyhXen6DQNisGSf1kxLV4f1nL6qtGqbOcXvyjuePGsn7ZQ9j8fMbZT_44WU2slRNP_ly4WNyKVsOtB1K4_tfVAYZ8Us_UMXyuGqbLGTDomcsRjziYNPo1l9U2IXtHZqWtUlC6i6D6i0EqtTb_hrcuTWZomhuVcJyKEgsS_esiHNZbMwjpw6c-Dma052ZG6Wuo2ppwJYFp0LfgwXwh7XV"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Sidebar: Mentor & Tips -->
+<aside class="lg:col-span-4 space-y-8">
+<!-- Mentor Card -->
+<div class="bg-tertiary-fixed p-8 rounded-lg relative overflow-hidden custom-shadow">
+<div class="absolute top-0 right-0 w-32 h-32 bg-on-tertiary-fixed/5 rounded-full -mr-16 -mt-16"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-4 mb-6">
+<div class="h-16 w-16 rounded-full border-2 border-on-tertiary-fixed overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A portrait of a smiling, middle-aged man with a kind expression and a casual denim apron, suggesting a friendly gardening mentor. He is standing in a lush greenhouse with soft, dappled sunlight. The image style is warm, authentic, and encouraging, using a natural color palette of greens and soft blues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_AMeLTjTVKimsiaY0RzuDHq14Xi3zYq26apL04AnsTHEwUmwo_PeRzHRHJwZwGHzy5z3n18nd1eamiaIpQxUxAHtgSjktFX6kVeij1YKROnmeGAenJRJ_l441j4L-pmyDgvr1TnzOKLGqR9ky0CAuP9bTj9rHMq5AZ71WBKwjV9L10GLuROBV-cexS7va-wsFM8FQuRISPZtpkqH-OaB2UfKE1r4rNUwjsjU1GnjcxtmsnlEeesIUHswblCv_cQp4v6pGKiSa-g3E"/>
+</div>
+<div>
+<p class="font-label-md text-on-tertiary-fixed-variant">Your Mentor</p>
+<h4 class="font-headline-md text-headline-md text-on-tertiary-fixed">Farmer Greg</h4>
+</div>
+</div>
+<div class="bg-white/40 backdrop-blur-sm p-4 rounded-lg mb-6 border border-white/20">
+<p class="text-body-md text-on-tertiary-fixed-variant italic">"Gardening isn't about having a 'green thumb'—it's just about paying attention. You've got this, let's keep growing!"</p>
+</div>
+<button class="w-full py-4 bg-primary text-on-primary rounded-full font-label-md flex items-center justify-center gap-2 group transition-all active:scale-95">
+                            Ask a Question
+                            <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Community Insight -->
+<div class="bg-surface-container-low p-8 rounded-lg border border-outline-variant">
+<h4 class="font-headline-md text-headline-md mb-4">Community Tip</h4>
+<div class="flex items-start gap-4">
+<div class="flex -space-x-3">
+<div class="w-8 h-8 rounded-full border-2 border-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="User profile thumbnail showing a young man with glasses smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcpeNYhGIPmEpwSlocCbw5RnS0iI-WHkhnRTjDnO-uHMkUB1mnRtbjH0kCenAwBI8cCsF8gPkVuARPkrXORYYl34307NbYWjBePRVcNLUAcEGTaAdqbmLIpjU8HwfGlDibQbV7o3eoCWa65C0Eg7fsSDaOhvE1XPt-fMXkriWpDW1HzOPAqAOmlHbangz4TevffR1Tc61lyNJJCcxiHj3FTJlp-eQM672FcQqOf3_Vwmc7Iz66Iq0bnscDc8CtoXiMUzR6RTVzPmSi"/>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="User profile thumbnail showing a woman with braided hair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdPK_B6vwt5xTJJLUidjNe2bf5R_s2gu5HLRkowA_8RVf61HEcOwYf3-R6h_D6tiYGRA9ESUaYtwkcNnGfvkcQ4wYSZMO3wo-jWfLHfenglmY8SlC-DbHV2I3VT9QJS3l3DJ69w8RYji8ljGC_EdXTs-IGohIjAQQz-AiTBwE0C0uWtklu_DMUjpcVfvqJ8blm-_HVlcGGjxqwTxieh4VbI3-SGQDLgM9SagDkuR_zxJjAADfuMgrU8NxaCHJhFzJrzfRAaltRMSxM"/>
+</div>
+</div>
+<p class="text-label-sm text-on-surface-variant italic">"12 others recently started this stage! Most shared that fabric pots help prevent over-watering."</p>
+</div>
+</div>
+<!-- Quick Links -->
+<div class="space-y-3">
+<h4 class="font-label-md text-on-surface-variant uppercase tracking-wider">Resources</h4>
+<a class="flex items-center justify-between p-4 bg-white rounded-lg border border-outline-variant hover:border-primary transition-colors group" href="#">
+<span class="font-label-md">The 'Watering' Cheat Sheet</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">download</span>
+</a>
+<a class="flex items-center justify-between p-4 bg-white rounded-lg border border-outline-variant hover:border-primary transition-colors group" href="#">
+<span class="font-label-md">Local Seed Swap Groups</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">groups</span>
+</a>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant dark:border-outline mt-section-gap">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-12 max-w-container-max mx-auto">
+<div class="mb-8 md:mb-0">
+<a class="text-headline-sm font-headline-sm font-bold text-primary dark:text-inverse-primary block mb-2" href="#">Hobbify</a>
+<p class="text-body-md text-on-surface-variant dark:text-surface-variant max-w-xs">© 2024 Hobbify. Discover your next passion.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-x-8 gap-y-4">
+<a class="text-label-sm font-label-sm text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">About Us</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">Help Center</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">Careers</a>
+</div>
+</div>
+</footer>
+<!-- Mobile Bottom Navigation -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 bg-surface/90 backdrop-blur-custom border-t border-outline-variant px-6 py-4 flex justify-between items-center z-50">
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-[10px] font-label-sm">Explore</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">favorite</span>
+<span class="text-[10px] font-label-sm">My Hobbies</span>
+</button>
+<div class="relative -top-8">
+<button class="bg-primary text-on-primary w-14 h-14 rounded-full flex items-center justify-center shadow-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+<span class="text-[10px] font-label-sm">Guide</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-label-sm">Profile</span>
+</button>
+</div>
+<script>
+        // Micro-interaction for checkboxes
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const card = this.closest('.step-card');
+                if (this.checked) {
+                    card.style.opacity = '0.7';
+                    card.classList.add('grayscale-[0.5]');
+                } else {
+                    card.style.opacity = '1';
+                    card.classList.remove('grayscale-[0.5]');
+                }
+            });
+        });
+    </script>
+</body></html>

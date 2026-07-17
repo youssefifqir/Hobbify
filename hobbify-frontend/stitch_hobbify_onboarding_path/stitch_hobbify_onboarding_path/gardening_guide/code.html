@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hobbify - Learning Progress</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Be+Vietnam+Pro:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#44474a",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#eadef9",
+                        "tertiary-container": "#1f192c",
+                        "on-secondary-fixed-variant": "#2a4e36",
+                        "primary-fixed": "#e2e2e5",
+                        "primary": "#000101",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#191c1d",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-secondary-fixed": "#00210e",
+                        "tertiary-fixed-dim": "#cdc2dc",
+                        "secondary-container": "#c3edcb",
+                        "surface": "#f8f9fa",
+                        "inverse-primary": "#c6c6c9",
+                        "error": "#ba1a1a",
+                        "background": "#f8f9fa",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#e7e8e9",
+                        "on-primary-container": "#838486",
+                        "inverse-surface": "#2e3132",
+                        "on-secondary-container": "#476d52",
+                        "outline-variant": "#c5c6ca",
+                        "tertiary": "#020009",
+                        "on-primary-fixed": "#1a1c1e",
+                        "primary-fixed-dim": "#c6c6c9",
+                        "primary-container": "#1a1c1e",
+                        "surface-tint": "#5d5e61",
+                        "on-primary-fixed-variant": "#454749",
+                        "on-tertiary-fixed": "#1f182b",
+                        "secondary": "#41664c",
+                        "surface-variant": "#e1e3e4",
+                        "on-secondary": "#ffffff",
+                        "outline": "#75777a",
+                        "on-tertiary-fixed-variant": "#4b4358",
+                        "on-tertiary-container": "#8a8098",
+                        "surface-container": "#edeeef",
+                        "surface-dim": "#d9dadb",
+                        "surface-bright": "#f8f9fa",
+                        "secondary-fixed-dim": "#a7d0b0",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#c3edcb",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-background": "#191c1d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "section-gap": "80px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Lexend"],
+                        "headline-lg-mobile": ["Lexend"],
+                        "label-sm": ["Be Vietnam Pro"],
+                        "label-md": ["Be Vietnam Pro"],
+                        "headline-xl": ["Lexend"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "headline-md": ["Lexend"],
+                        "body-lg": ["Be Vietnam Pro"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .step-transition {
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+        }
+        .progress-glow {
+            box-shadow: 0 0 12px rgba(195, 237, 203, 0.6);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen pb-32 overflow-x-hidden">
+<!-- Top Navigation Shell -->
+<header class="sticky top-0 w-full z-40 flex justify-between items-center px-margin-mobile py-4 bg-surface/80 backdrop-blur-xl transition-all">
+<button class="active:scale-95 transition-all text-primary">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tight text-primary">Hobbify</h1>
+<button class="active:scale-95 transition-all text-primary">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</header>
+<main class="max-w-md mx-auto px-margin-mobile mt-4">
+<!-- Hero Section & Overall Progress -->
+<section class="mb-10">
+<div class="relative w-full h-48 rounded-lg overflow-hidden mb-6 shadow-sm">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent z-10"></div>
+<div class="absolute inset-0 w-full h-full" data-alt="A serene indoor gardening setup with lush green monsteras and terra cotta pots on a minimalist wooden shelf. The soft morning light spills through a large window, creating a warm, organic atmosphere. The style is modern-organic with a light-mode aesthetic, emphasizing natural textures and airy negative space. The color palette features soft mint greens and warm wood tones." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC6T3zLynOgWSkC4TD7iiy1VSUfNHXtv1-eEi9JPwXaAMzKHlMWSEwW4RwuJGUKMCHiITKabsU0f402YW2_EcVmfcqhi48BIF9K7NwYbE538Eudus2mT2vJ6NupN3hyjtxZQkppPqX4hwy4Cw_MYL9AWoy1C4oLRkDbjRaG26m4yv-iL9aOR2u9GE529QXcQCW-J4H81c5sGzFz6nIBgnv7qnaIaYvlnUUs3zwA3nLYI6O68xNQI_arPWdUamnPs6qvvcVtUAvubVX1')"></div>
+<div class="absolute bottom-4 left-4 z-20">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-sm text-label-sm mb-2 inline-block">Current Course</span>
+<h2 class="font-headline-md text-headline-md text-white">Indoor Urban Jungle</h2>
+</div>
+</div>
+<!-- Progress Indicator -->
+<div class="bg-surface-container-low p-6 rounded-lg">
+<div class="flex justify-between items-end mb-3">
+<span class="font-label-md text-label-md text-on-surface-variant">Overall Progress</span>
+<span class="font-headline-md text-headline-md text-primary">4<span class="text-on-surface-variant/50 text-label-md">/12 steps</span></span>
+</div>
+<div class="w-full h-3 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-1/3 rounded-full progress-glow transition-all duration-1000 ease-out"></div>
+</div>
+<p class="mt-4 font-label-sm text-label-sm text-on-surface-variant leading-relaxed">
+                    You're doing great! Complete 2 more steps to unlock the <span class="font-bold">Soil Master</span> badge.
+                </p>
+</div>
+</section>
+<!-- Stages Accordion -->
+<section class="space-y-4">
+<!-- Stage 1: Expanded -->
+<div class="group border border-outline-variant/30 rounded-lg bg-surface-container-lowest overflow-hidden transition-all duration-300">
+<div class="flex items-center justify-between p-5 cursor-pointer bg-surface-container-high/20" onclick="toggleAccordion(this)">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">handyman</span>
+</div>
+<div>
+<h3 class="font-headline-md-mobile text-body-lg font-bold">Stage 1: Gear & Setup</h3>
+<span class="text-label-sm font-label-sm text-on-secondary-container">4/4 steps completed</span>
+</div>
+</div>
+<span class="material-symbols-outlined transition-transform duration-300 rotate-180">expand_more</span>
+</div>
+<div class="step-transition px-5 pb-5 max-h-[1000px] opacity-100">
+<div class="pt-4 space-y-4">
+<!-- Checklist Item 1 -->
+<label class="flex items-center gap-4 p-4 rounded-lg bg-surface-container-low/50 border border-secondary-fixed-dim cursor-pointer group/item">
+<div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<span class="flex-1 font-body-md text-on-surface line-through decoration-on-surface-variant/50">Essential tool list</span>
+<span class="material-symbols-outlined text-on-surface-variant/40">info</span>
+</label>
+<!-- Checklist Item 2 -->
+<label class="flex items-center gap-4 p-4 rounded-lg bg-surface-container-low/50 border border-secondary-fixed-dim cursor-pointer group/item">
+<div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<span class="flex-1 font-body-md text-on-surface line-through decoration-on-surface-variant/50">Potting mat assembly</span>
+<span class="material-symbols-outlined text-on-surface-variant/40">info</span>
+</label>
+<!-- Checklist Item 3 -->
+<label class="flex items-center gap-4 p-4 rounded-lg bg-surface-container-low/50 border border-secondary-fixed-dim cursor-pointer group/item">
+<div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<span class="flex-1 font-body-md text-on-surface line-through decoration-on-surface-variant/50">Water drainage test</span>
+<span class="material-symbols-outlined text-on-surface-variant/40">info</span>
+</label>
+<!-- Checklist Item 4 -->
+<label class="flex items-center gap-4 p-4 rounded-lg bg-surface-container-low/50 border border-secondary-fixed-dim cursor-pointer group/item">
+<div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<span class="flex-1 font-body-md text-on-surface line-through decoration-on-surface-variant/50">Light placement map</span>
+<span class="material-symbols-outlined text-on-surface-variant/40">info</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Stage 2: Collapsed -->
+<div class="group border border-outline-variant/30 rounded-lg bg-surface-container-lowest overflow-hidden transition-all duration-300">
+<div class="flex items-center justify-between p-5 cursor-pointer" onclick="toggleAccordion(this)">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<div>
+<h3 class="font-headline-md-mobile text-body-lg font-bold">Stage 2: Planting</h3>
+<span class="text-label-sm font-label-sm text-on-surface-variant">0/3 steps indicator</span>
+</div>
+</div>
+<span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+</div>
+<div class="step-transition px-5 max-h-0 opacity-0 overflow-hidden">
+<div class="pt-4 space-y-4 pb-5">
+<label class="flex items-center gap-4 p-4 rounded-lg bg-surface border border-outline-variant/20 cursor-pointer active:scale-[0.98] transition-transform">
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant flex items-center justify-center text-white"></div>
+<span class="flex-1 font-body-md text-on-surface">Choosing your first plant</span>
+</label>
+<label class="flex items-center gap-4 p-4 rounded-lg bg-surface border border-outline-variant/20 cursor-pointer active:scale-[0.98] transition-transform">
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant flex items-center justify-center text-white"></div>
+<span class="flex-1 font-body-md text-on-surface">Root aeration technique</span>
+</label>
+<label class="flex items-center gap-4 p-4 rounded-lg bg-surface border border-outline-variant/20 cursor-pointer active:scale-[0.98] transition-transform">
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant flex items-center justify-center text-white"></div>
+<span class="flex-1 font-body-md text-on-surface">First watering ritual</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Stage 3: Locked -->
+<div class="group border border-outline-variant/10 rounded-lg bg-surface-container-low/30 overflow-hidden transition-all duration-300 opacity-60">
+<div class="flex items-center justify-between p-5 grayscale">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">lock</span>
+</div>
+<div>
+<h3 class="font-headline-md-mobile text-body-lg font-bold">Stage 3: Nutrients & Growth</h3>
+<span class="text-label-sm font-label-sm text-on-surface-variant italic">Locked by Stage 2</span>
+</div>
+</div>
+<span class="material-symbols-outlined opacity-30">lock</span>
+</div>
+</div>
+</section>
+<!-- Contextual Recommendation -->
+<section class="mt-margin-mobile">
+<h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-4">Bonus Content</h4>
+<div class="relative rounded-lg bg-tertiary-fixed p-6 overflow-hidden">
+<div class="relative z-10 flex items-center justify-between">
+<div class="max-w-[70%]">
+<h5 class="font-headline-md-mobile text-on-tertiary-fixed font-bold leading-tight">Mastering Low Light</h5>
+<p class="text-label-sm text-on-tertiary-fixed-variant mt-2">Deep dive into shade-loving species.</p>
+<button class="mt-4 bg-primary text-white rounded-full px-5 py-2 font-label-md active:scale-95 transition-all flex items-center gap-2">
+                            Watch Video <span class="material-symbols-outlined text-sm">play_arrow</span>
+</button>
+</div>
+<div class="w-20 h-20 bg-tertiary-fixed-dim/50 rounded-full blur-xl absolute -right-4 -top-4"></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-margin-mobile py-3 bg-surface-container-lowest shadow-[0_-4px_24px_rgba(0,0,0,0.04)] rounded-t-lg">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/50 transition-transform duration-200 scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-label-sm text-label-sm mt-1">Discover</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-5 py-1.5 transition-transform duration-200 scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-label-sm text-label-sm mt-1">My Hobbies</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/50 transition-transform duration-200 scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm mt-1">Profile</span>
+</a>
+</nav>
+<script>
+        function toggleAccordion(element) {
+            const container = element.parentElement;
+            const content = container.querySelector('.step-transition');
+            const icon = element.querySelector('.material-symbols-outlined:last-child');
+            
+            // Toggle logic
+            if (content.classList.contains('max-h-0')) {
+                // Open
+                content.classList.remove('max-h-0', 'opacity-0');
+                content.classList.add('max-h-[1000px]', 'opacity-100', 'pb-5');
+                icon.classList.add('rotate-180');
+                container.classList.add('bg-surface-container-high/20');
+            } else {
+                // Close
+                content.classList.add('max-h-0', 'opacity-0');
+                content.classList.remove('max-h-[1000px]', 'opacity-100', 'pb-5');
+                icon.classList.remove('rotate-180');
+                container.classList.remove('bg-surface-container-high/20');
+            }
+        }
+
+        // Initialize progress bar width with a delay for visual effect
+        window.addEventListener('load', () => {
+            const bar = document.querySelector('.bg-secondary.w-1\/3');
+            if (bar) {
+                bar.style.width = '33.33%';
+            }
+        });
+
+        // Add subtle interaction effect to items
+        document.querySelectorAll('label').forEach(item => {
+            item.addEventListener('click', function() {
+                const check = this.querySelector('.w-6.h-6');
+                if (!check.classList.contains('bg-secondary')) {
+                    check.classList.add('bg-secondary', 'border-secondary', 'animate-pulse');
+                    check.innerHTML = '<span class="material-symbols-outlined text-[18px]">check</span>';
+                    setTimeout(() => check.classList.remove('animate-pulse'), 500);
+                }
+            });
+        });
+    </script>
+</body></html>

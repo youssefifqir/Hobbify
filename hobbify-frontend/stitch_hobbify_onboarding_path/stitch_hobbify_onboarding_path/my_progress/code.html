@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Be+Vietnam+Pro:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Lexend', sans-serif;
+        }
+        .hobby-card-shadow {
+            box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#44474a",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#eadef9",
+                        "tertiary-container": "#1f192c",
+                        "on-secondary-fixed-variant": "#2a4e36",
+                        "primary-fixed": "#e2e2e5",
+                        "primary": "#000101",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#191c1d",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-secondary-fixed": "#00210e",
+                        "tertiary-fixed-dim": "#cdc2dc",
+                        "secondary-container": "#c3edcb",
+                        "surface": "#f8f9fa",
+                        "inverse-primary": "#c6c6c9",
+                        "error": "#ba1a1a",
+                        "background": "#f8f9fa",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#e7e8e9",
+                        "on-primary-container": "#838486",
+                        "inverse-surface": "#2e3132",
+                        "on-secondary-container": "#476d52",
+                        "outline-variant": "#c5c6ca",
+                        "tertiary": "#020009",
+                        "on-primary-fixed": "#1a1c1e",
+                        "primary-fixed-dim": "#c6c6c9",
+                        "primary-container": "#1a1c1e",
+                        "surface-tint": "#5d5e61",
+                        "on-primary-fixed-variant": "#454749",
+                        "on-tertiary-fixed": "#1f182b",
+                        "secondary": "#41664c",
+                        "surface-variant": "#e1e3e4",
+                        "on-secondary": "#ffffff",
+                        "outline": "#75777a",
+                        "on-tertiary-fixed-variant": "#4b4358",
+                        "on-tertiary-container": "#8a8098",
+                        "surface-container": "#edeeef",
+                        "surface-dim": "#d9dadb",
+                        "surface-bright": "#f8f9fa",
+                        "secondary-fixed-dim": "#a7d0b0",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#c3edcb",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-background": "#191c1d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "section-gap": "80px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Lexend"],
+                        "headline-lg-mobile": ["Lexend"],
+                        "label-sm": ["Be Vietnam Pro"],
+                        "label-md": ["Be Vietnam Pro"],
+                        "headline-xl": ["Lexend"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "headline-md": ["Lexend"],
+                        "body-lg": ["Be Vietnam Pro"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- Top App Bar -->
+<header class="sticky top-0 w-full z-40 flex justify-between items-center px-margin-mobile py-4 bg-surface/80 backdrop-blur-xl">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-all text-primary">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tight text-primary">Hobbify</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="active:scale-95 transition-all text-primary">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+</button>
+</div>
+</header>
+<main class="px-margin-mobile pt-4 space-y-8">
+<!-- Dashboard Header -->
+<section>
+<h2 class="font-headline-md text-headline-md text-primary mb-2">My Journey</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Keep growing. You're doing amazing today.</p>
+</section>
+<!-- Active Hobbies (Bento-ish Grid) -->
+<section class="grid grid-cols-1 gap-6">
+<!-- Urban Gardening Card -->
+<div class="bg-surface-container-lowest rounded-lg p-5 hobby-card-shadow flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div class="flex gap-4">
+<div class="w-16 h-16 rounded-2xl overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A lush urban balcony garden filled with vibrant green herbs and small vegetable plants in terracotta pots. Soft morning sunlight filters through the leaves, creating a peaceful and nurturing atmosphere. The style is modern-organic with a focus on fresh, natural textures and a light, airy color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANP-_XA1qfeayBcLb3h_AvWVAKfGKguLBQOsQwlbxIQfh7mdnirps8VpI4NSF5H2MvyYxVq0AGJcwMFyYps852KuTnA2CiYt2KOHc3mDiyLlqW5MUXzDqVZLyuasDWSRfD62Cc3j7bfLYKeVbooEbO8h-wOt-wifFGbLeFqOkbQLdOUGkatwi5_g2J3WT0sn6y3Rx6cQK1KAQTmYohfFPgrliIo76i2E6DuN5ZiwGxz5h4Fb-wV5EYE_gu8H2o6-A4DUE6C0ns36gl"/>
+</div>
+<div>
+<h3 class="font-headline-md text-[20px] text-primary">Urban Gardening</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Level 2 • Intermediate</p>
+</div>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-sm text-label-sm">33%</span>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center font-label-md text-label-md">
+<span class="text-on-surface-variant">Progress</span>
+<span class="text-primary">33/100 XP</span>
+</div>
+<div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-1/3 rounded-full transition-all duration-700 ease-out"></div>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-full font-label-md text-label-md flex items-center justify-center gap-2 active:scale-95 transition-transform">
+                    Resume <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+<!-- Pottery Card -->
+<div class="bg-surface-container-lowest rounded-lg p-5 hobby-card-shadow flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div class="flex gap-4">
+<div class="w-16 h-16 rounded-2xl overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close-up of human hands gently shaping a wet clay pot on a spinning pottery wheel. Splatters of soft grey clay and droplets of water catch the studio's soft ambient light. The aesthetic is tactile and calming, featuring a palette of earthy neutrals and soft pastels, emphasizing the craft and patience of the hobby." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5VyixLDEszsqn6pLBo4HeEsuBIgwCneXhQOtvpwDrZRSs8feXMcCBsWLyZHjrIcmNix79Vy_oJpxMkMEihoeqyIX5WdNJT3l2vJwDlfUe6dAr5dJxYMKeg4OmG0mGex35RxblX6KWfcyFeBoBsqTPh10LggoppARmq3eGT9R3E2xLB0FbpB4QbdBNiS8vHWm784WqLrH22GuIQhjemsN9upuXLXX10ankRbFVO--lNs8kNp9oyb9T81A_XnSsAscJ6T7O8vG26xG3"/>
+</div>
+<div>
+<h3 class="font-headline-md text-[20px] text-primary">Pottery</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Level 1 • Beginner</p>
+</div>
+</div>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-3 py-1 rounded-full font-label-sm text-label-sm">10%</span>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center font-label-md text-label-md">
+<span class="text-on-surface-variant">Progress</span>
+<span class="text-primary">10/100 XP</span>
+</div>
+<div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-on-tertiary-container w-[10%] rounded-full transition-all duration-700 ease-out"></div>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-full font-label-md text-label-md flex items-center justify-center gap-2 active:scale-95 transition-transform">
+                    Resume <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- Empty/Exploration State -->
+<section class="py-12 px-6 text-center space-y-6">
+<div class="relative inline-block">
+<div class="absolute inset-0 bg-secondary-container/30 blur-2xl rounded-full"></div>
+<span class="material-symbols-outlined text-[64px] text-on-secondary-container relative">rocket_launch</span>
+</div>
+<div class="space-y-2">
+<p class="font-headline-md text-[22px] text-primary">Feeling adventurous?</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Browse more hobbies and start your next great obsession.</p>
+</div>
+<button class="px-8 py-3 bg-secondary-container text-on-secondary-container rounded-full font-label-md text-label-md hover:bg-secondary-container/80 transition-colors active:scale-95">
+                Explore New Interests
+            </button>
+</section>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-margin-mobile py-3 bg-surface-container-lowest shadow-[0_-4px_24px_rgba(0,0,0,0.04)] rounded-t-lg">
+<!-- Discover -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/50 px-4 py-2 rounded-full transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-label-sm text-label-sm mt-1">Discover</span>
+</a>
+<!-- My Hobbies (Active) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-5 py-1.5 transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-label-sm text-label-sm mt-1">My Hobbies</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/50 px-4 py-2 rounded-full transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm mt-1">Profile</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for cards
+        document.querySelectorAll('.hobby-card-shadow').forEach(card => {
+            card.addEventListener('touchstart', () => {
+                card.classList.add('scale-[0.98]');
+            });
+            card.addEventListener('touchend', () => {
+                card.classList.remove('scale-[0.98]');
+            });
+        });
+
+        // Background decorative shapes subtle animation
+        const body = document.querySelector('body');
+        const decoration = document.createElement('div');
+        decoration.className = 'fixed inset-0 pointer-events-none -z-10 overflow-hidden opacity-30';
+        decoration.innerHTML = `
+            <div class="absolute -top-24 -left-24 w-64 h-64 bg-secondary-container rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute top-1/2 -right-32 w-80 h-80 bg-tertiary-fixed rounded-full blur-3xl animate-pulse" style="animation-delay: 2s"></div>
+        `;
+        body.appendChild(decoration);
+    </script>
+</body></html>
